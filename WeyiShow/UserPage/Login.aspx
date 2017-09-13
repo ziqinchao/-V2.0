@@ -50,7 +50,7 @@
                         </div>
                         <div class="user_left">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                                ControlToValidate="txtUserName" ErrorMessage="手机号码" ForeColor="#FF0066" CssClass="hid"></asp:RequiredFieldValidator>
+                                ControlToValidate="txtUserPhone" ErrorMessage="手机号码" ForeColor="#FF0066" CssClass="hid"></asp:RequiredFieldValidator>
                         </div>
                     </div>
                     <div class="clearfix blo">

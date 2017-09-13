@@ -267,9 +267,9 @@ namespace WeyiShow.Libraries
                 "SELECT * FROM ProductGood WHERE ProductId=:ProductId";
             DbCommand cmd = db.GetSqlStringCommand(strSql);
 
-
+            db.AddInParameter(cmd, "ProductId", DbType.String, ProductId);
             Detail_ProductGood myDetail = new Detail_ProductGood();
-
+            //IDataReader myReader = db.ExecuteReader(cmd);
             using (IDataReader myReader = db.ExecuteReader(cmd))
             {
                 if (myReader.Read())

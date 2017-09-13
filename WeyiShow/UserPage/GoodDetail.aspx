@@ -45,7 +45,7 @@
                 <div class="pull-left">
                      <asp:Button ID="addCar" runat="server" Text=" 添加购物车 " OnClick="addCar_Click" class="btn btn-danger" />
                      <asp:Button ID="buy" runat="server" Text="购 买" OnClick="buy_Click" class="btn btn-primary" />
-					  <asp:Button ID="Button1" runat="server" Text="Button" OnClick="buy_Click" />
+					
                    
                 </div>
             </div>

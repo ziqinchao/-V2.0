@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Code.cs" />
     <Compile Include="DB_ProductGood.cs" />
+    <Compile Include="DB_ShopCar.cs" />
     <Compile Include="DB_UserInfomation.cs" />
     <Compile Include="GetGuid.cs" />
     <Compile Include="GlobleClass.cs" />

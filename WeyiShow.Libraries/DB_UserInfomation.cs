@@ -110,6 +110,27 @@ namespace WeyiShow.Libraries
         }
 
 
+        /// <summary>
+        /// 根据相应条件，获取表【UserInfomation】的记录
+        /// 编写日期：2017/9/13
+        /// 编写人：訾钦朝
+        /// </summary>
+        /// <param name="UserPhone"></param>
+        public string SelectUserGuid(string UserPhone)
+        {
+
+            Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
+            string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
+                "SELECT UserGuid FROM UserInfomation Where  UserPhone=@UserPhone " :
+                "SELECT UserGuid FROM UserInfomation Where  UserPhone=:UserPhone ";
+            DbCommand cmd = db.GetSqlStringCommand(strSql);
+
+            db.AddInParameter(cmd, "UserPhone", DbType.String, UserPhone);
+
+            return db.ExecuteScalar(cmd).ToString();
+        }
+
+
 
 
 

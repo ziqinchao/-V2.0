@@ -7,8 +7,10 @@ using Com.Alipay;
 
 public partial class USER_GoodDetail : System.Web.UI.Page
 {
+    string userguid;
     protected void Page_Load(object sender, EventArgs e)
     {
+       
         GlobleClass.ExecBeforPageLoad(this.Page);
         if (!IsPostBack)
         {
@@ -95,83 +97,85 @@ public partial class USER_GoodDetail : System.Web.UI.Page
     //}
     protected void addCar_Click(object sender, EventArgs e)
     {
-        //需要
-        //if (Session["username"] == null)
-        //{
-        //    Response.Write("<script>alert('请重新登录！')</script>");
-        //    Response.Redirect("Default.aspx");
-        //}
-        //else
-        //{
-        //    if (new DataClass2().SaveShopCar(Session["username"].ToString(), hdID.Value, lbname.Text, ImageMapPhoto.ImageUrl, float.Parse(lbprice.Text)))
-        //    {
-        //        GlobleClass.PopInfo(this.Page, "添加购物车成功！");
-        //    }
-        //    else
-        //    {
-        //        GlobleClass.PopInfo(this.Page, "添加购物车失败！");
-        //    }
-        //}
+
+        if (Session["userphone"] == null)
+        {
+            Response.Write("<script>alert('请重新登录！')</script>");
+            Response.Redirect("Default.aspx");
+        }
+        else
+        {
+            if (new DB_ShopCar().Insert(userguid, hdID.Value,new DB_ProductGood().GetDetail(hdID.Value).ProductName, new DB_ProductGood().GetDetail(hdID.Value).ImageUrl,  float.Parse(lbprice.Text) ,'1', float.Parse(lbprice.Text)))
+            {
+                GlobleClass.PopInfo(this.Page, "添加购物车成功！");
+            }
+            else
+            {
+                GlobleClass.PopInfo(this.Page, "添加购物车失败！");
+            }
+        }
     }
     protected void buy_Click(object sender, EventArgs e)
     {
-        //需要
-    //    if (Session["username"] == null)
-    //    {
-    //        Response.Write("<script>alert('请重新登录！')</script>");
-    //        Response.Redirect("Default.aspx");
-    //    }
-    //    else
-    //    {
-    //        //if (new DataClass2().SaveShopCar(Session["username"].ToString(), hdID.Value, lbname.Text, ImageMapPhoto.ImageUrl, float.Parse(lbprice.Text), int.Parse(number.Text), float.Parse(totalPrice.Text)))
-    //        if (new DataClass2().SaveShopCar(Session["username"].ToString(),Request.QueryString["ProductId"].ToString(),  lbname.Text, ImageMapPhoto.ImageUrl, float.Parse(lbprice.Text)))
-    //        {
-    //            //Response.Redirect("MakeSure.aspx?SumPrice=" + totalPrice.Text.Trim());
-    //            //商户订单号，商户网站订单系统中唯一订单号，必填
-    //            string out_trade_no = hdID.Value.Trim();
 
-    //            //订单名称，必填
-    //            string subject = lbname.Text.Trim();
+        if (Session["userphone"] == null)
+        {
+            Response.Write("<script>alert('请重新登录！')</script>");
+            Response.Redirect("Login.aspx");
+        }
+        else
+        {
+            string userphone = Session["userphone"].ToString().Trim();
+            userguid = new DB_UserInfomation().SelectUserGuid(userphone);
+            //if (new DataClass2().SaveShopCar(Session["username"].ToString(), hdID.Value, lbname.Text, ImageMapPhoto.ImageUrl, float.Parse(lbprice.Text), int.Parse(number.Text), float.Parse(totalPrice.Text)))
+            if (new DB_ShopCar().Insert(userguid, hdID.Value, new DB_ProductGood().GetDetail(hdID.Value).ProductName, new DB_ProductGood().GetDetail(hdID.Value).ImageUrl, float.Parse(lbprice.Text), '1', float.Parse(lbprice.Text)))
+            {
+                //Response.Redirect("MakeSure.aspx?SumPrice=" + totalPrice.Text.Trim());
+                //商户订单号，商户网站订单系统中唯一订单号，必填
+                string out_trade_no = new GetGuid().GetUserGuid();
 
-    //            //付款金额，必填
-    //            //string total_fee = totalPrice.Text.Trim();
-				//string total_fee = lbprice.Text.Trim();
+                //订单名称，必填
+                string subject = lbname.Text.Trim();
 
-    //            //收银台页面上，商品展示的超链接，必填
-    //            string show_url = lbname.Text.Trim();
+                //付款金额，必填
+                //string total_fee = totalPrice.Text.Trim();
+                string total_fee = lbprice.Text.Trim();
 
-    //            //商品描述，可空
-    //            string body = lbname.Text.Trim();
+                //收银台页面上，商品展示的超链接，必填
+                string show_url = lbname.Text.Trim();
+
+                //商品描述，可空
+                string body = lbname.Text.Trim();
 
 
 
-    //            ////////////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //            //把请求参数打包成数组
-    //            SortedDictionary<string, string> sParaTemp = new SortedDictionary<string, string>();
-    //            sParaTemp.Add("partner", Config.partner);
-    //            sParaTemp.Add("seller_id", Config.seller_id);
-    //            sParaTemp.Add("_input_charset", Config.input_charset.ToLower());
-    //            sParaTemp.Add("service", Config.service);
-    //            sParaTemp.Add("payment_type", Config.payment_type);
-    //            sParaTemp.Add("notify_url", Config.notify_url);
-    //            sParaTemp.Add("return_url", Config.return_url);
-    //            sParaTemp.Add("out_trade_no", out_trade_no);
-    //            sParaTemp.Add("subject", subject);
-    //            sParaTemp.Add("total_fee", total_fee);
-    //            sParaTemp.Add("show_url", show_url);
-    //            sParaTemp.Add("body", body);
-    //            //其他业务参数根据在线开发文档，添加参数.文档地址:https://doc.open.alipay.com/doc2/detail.htm?spm=a219a.7629140.0.0.2Z6TSk&treeId=60&articleId=103693&docType=1
-    //            //如sParaTemp.Add("参数名","参数值");
+                //把请求参数打包成数组
+                SortedDictionary<string, string> sParaTemp = new SortedDictionary<string, string>();
+                sParaTemp.Add("partner", Config.partner);
+                sParaTemp.Add("seller_id", Config.seller_id);
+                sParaTemp.Add("_input_charset", Config.input_charset.ToLower());
+                sParaTemp.Add("service", Config.service);
+                sParaTemp.Add("payment_type", Config.payment_type);
+                sParaTemp.Add("notify_url", Config.notify_url);
+                sParaTemp.Add("return_url", Config.return_url);
+                sParaTemp.Add("out_trade_no", out_trade_no);
+                sParaTemp.Add("subject", subject);
+                sParaTemp.Add("total_fee", total_fee);
+                sParaTemp.Add("show_url", show_url);
+                sParaTemp.Add("body", body);
+                //其他业务参数根据在线开发文档，添加参数.文档地址:https://doc.open.alipay.com/doc2/detail.htm?spm=a219a.7629140.0.0.2Z6TSk&treeId=60&articleId=103693&docType=1
+                //如sParaTemp.Add("参数名","参数值");
 
-    //            //建立请求
-    //            string sHtmlText = Submit.BuildRequest(sParaTemp, "get", "确认");
-    //            Response.Write(sHtmlText);
-    //        }
-    //        else
-    //        {
-    //            GlobleClass.PopInfo(this.Page, "购买失败！");
-    //        }
-    //    }
+                //建立请求
+                string sHtmlText = Submit.BuildRequest(sParaTemp, "get", "确认");
+                Response.Write(sHtmlText);
+            }
+            else
+            {
+                GlobleClass.PopInfo(this.Page, "购买失败！");
+            }
+        }
     }
 }
