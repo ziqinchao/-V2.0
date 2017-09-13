@@ -1,0 +1,318 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="USER_tetle" Codebehind="tetle.master.cs" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+<link href="../css/muban.css" rel="stylesheet" type="text/css" />    
+     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
+   <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+
+<%--<script type="text/javascript">
+    window.onload = function () {
+        var oUl = document.getElementById('ul1');
+        var aLi = oUl.getElementsByTagName('li');
+        var oBg = aLi[aLi.length - 1];
+        var i = 0;
+
+        for (i = 0; i < aLi.length - 1; i++) {
+            aLi[i].onmouseover = function () {
+                startMove(oBg, this.offsetLeft);
+            };
+        }
+    };
+
+    var iSpeed = 0;
+    var left = 0;
+
+    function startMove(obj, iTarget) {
+        clearInterval(obj.timer);
+
+        obj.timer = setInterval(function () {
+            iSpeed += (iTarget - obj.offsetLeft) / 5;
+            iSpeed *= 0.7;
+
+            left += iSpeed;
+
+            if (Math.abs(iSpeed) < 1 && Math.abs(left - iTarget) < 1) {
+                clearInterval(obj.timer);
+
+                obj.style.left = iTarget + 'px';
+
+                //alert('关了');
+            }
+            else {
+                obj.style.left = left + 'px';
+            }
+        }, 30);
+    }
+</script>
+
+<style type="text/css">
+#contact .contact-form h2
+{
+    color:Navy;
+    }
+#contact .contact-form span
+{
+    color:Black;
+    }
+</style>--%>
+</head>
+<body>  
+    <form id="form1" runat="server">
+
+          <nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">唯艺网</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+	        <li><a href="#">热卖专区</a></li>
+	        <li><a href="#">促销专区</a></li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类 <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            	<li><a href="#">编制</a></li>
+		            <li><a href="#">雕刻</a></li>
+		            <li><a href="#">绘画</a></li>
+		            <li><a href="#">陶瓷</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	     <div class="navbar-form navbar-left" >
+	        <div class="form-group navbar-left"  >
+	          <asp:TextBox ID="searchtext" runat="server" class="form-control" placeholder="请输入搜索内容"></asp:TextBox>
+	        </div>
+              <div class="navbar-left" >
+	       <asp:Button ID="Button1" class="btn btn-default"  runat="server" Text="搜索" />
+                  </div>
+	      </div>
+	      <ul class="nav navbar-nav navbar-right">
+	        
+               <li><a href="ChangePwd.aspx">会员中心</a></li>
+               <li><a href="AddCar.aspx">购物车</a></li>
+               <li><asp:HyperLink ID="login" runat="server" NavigateUrl="~/USER/Default.aspx">登录</asp:HyperLink></li>
+               <li><asp:HyperLink ID="register" runat="server" NavigateUrl="~/USER/regist.aspx">注册</asp:HyperLink></li>
+               <li><asp:Label ID="huanying" runat="server" Text="欢迎:" ></asp:Label></li> 
+               <li><asp:LinkButton ID="zhuxiao" runat="server" >注销</asp:LinkButton></li>  
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+
+
+
+
+
+
+
+
+
+
+   <%-- <div id="container">
+       <div id="header">
+             <div class="top_left">
+				    <ul>
+					    <li><a href="unEdit.aspx">帮助</a></li>
+					    <li><a href="contact.aspx">联系我们</a></li>
+					    
+                        <div class="clearfix"></div>
+				    </ul>
+			    </div>
+			    <div class="top_right">
+				   <ul>                                        
+					    <li><a href="ChangePwd.aspx">会员中心</a></li>
+					    <li><a href="MyOrder.aspx">我的订单</a></li>
+                        <li><a href="AddCar.aspx">购物车</a></li>
+                        <li><asp:HyperLink ID="login" runat="server" NavigateUrl="~/USER/Default.aspx" 
+                                Font-Bold="True" Font-Size="16px" ForeColor="#FF6600">登录</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="register" runat="server" 
+                                NavigateUrl="~/USER/UserRegist.aspx" Font-Bold="True" Font-Size="16px" 
+                                ForeColor="#FF6600">注册</asp:HyperLink></li>
+                        <li><asp:Label ID="huanying" runat="server" Text="欢迎:" Font-Bold="True" 
+                                Font-Size="16px" ForeColor="#FF6600"></asp:Label></li> 
+                        <li><asp:LinkButton ID="zhuxiao" runat="server"  Font-Bold="True" 
+                                Font-Size="16px" ForeColor="#FF6600" onclick="zhuxiao_Click">注销</asp:LinkButton></li>
+                        <div class="clearfix"></div>
+				    </ul>
+                    
+			    </div>
+				    <div class="clearfix"></div>
+
+       </div>
+       <div id="kong"></div>
+        <div id="top_level_1">
+              <div id="a">
+                   <img src="../images/logo.png" alt="" align="center" height="50" width="90"/>
+              </div>
+               <div id="search">
+                     <asp:TextBox ID="searchtext" runat="server" Font-Size="23px" Height="28px" 
+                         Width="300px">搜..</asp:TextBox>
+                     <asp:Button ID="submittext" runat="server" Text="搜索" BackColor="#F5F5DC" 
+                         BorderStyle="Solid" Font-Bold="True" Font-Size="20px" Height="38px" 
+                         Width="80px" onclick="submittext_Click" />
+                   </div>
+              <div class="clearfix"></div> 
+       </div>
+       <div id="nav_level_1">
+           <ul id="ul1">
+           <li><a href="index.aspx">首页</a></li>
+            <li><a href="AllProduct.aspx">全部商品</a></li>
+            <li><a href="Product_tuijain.aspx">推荐新品</a></li>
+            <li><a href="Product_remai.aspx">热卖专区</a></li>
+            <li><a href="Product_cuxiao.aspx">促销专区</a></li>
+            <li><a href="contact.aspx">客户留言</a></li>
+            <li><a href="video.aspx">产品介绍</a></li>
+            <li class="bg"></li>
+           </ul>
+       </div>--%>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+
+
+
+
+         <div class="foot ">
+      <div class="r1 w1225 row">
+        <div class=" w188 col-md-2 col-xs-12 col-sm-6" style="padding-left:30px;">
+            <div class=" w110">
+                <a href="#"  rel="nofollow"><img src="../img/erweima.jpg" class="img-thumbnail" style="max-width:120px;"/></a>
+                <p class="saoma">扫码关注公众号</p>
+            </div>
+            
+        </div>
+        <div class=" w188 col-md-2 col-xs-12 col-sm-6">
+            <dt class=" w70"><i>新手</i></dt>
+            <dd class=" w110">
+                <a href=""   rel="nofollow">&bull;&nbsp;用户注册</a>
+                <a href=""   rel="nofollow">&bull;&nbsp;找回密码</a>
+                <a href=""   rel="nofollow">&bull;&nbsp;订购流程</a>
+            </dd>
+        </div>
+        <div class=" w188 col-md-2 col-xs-12 col-sm-6">
+            <dt class=" w70"><i>支付</i></dt>
+            <dd class=" w110">
+                <a href=""   rel="nofollow">&bull;&nbsp;支付方式</a>
+                <a href=""   rel="nofollow">&bull;&nbsp;发票说明</a>
+                <a href=""   rel="nofollow">&bull;&nbsp;支付问题</a>
+            </dd>
+        </div>
+        <div class=" w188 col-md-2 col-xs-12 col-sm-6">
+            <dt class=" w70"><i>配送</i></dt>
+            <dd class=" w110">
+                <a href=""   rel="nofollow">&bull;&nbsp;配送方式</a>
+                <a href=""   rel="nofollow">&bull;&nbsp;配送说明</a>
+                <a href=""   rel="nofollow">&bull;&nbsp;包裹签收</a>
+            </dd>
+        </div>
+        <div class=" w188 col-md-2 col-xs-12 col-sm-6">
+            <dt class=" w70"><i>保障</i></dt>
+            <dd class=" w110">
+                <a href=""   rel="nofollow">&bull;&nbsp;退换货政策说明</a>
+                <a href=""   rel="nofollow">&bull;&nbsp;如何办理退货</a>
+                <a href=""   rel="nofollow">&bull;&nbsp;常见问题</a>
+            </dd>
+        </div>
+        <div class=" w188 col-md-2 col-xs-12 col-sm-6">
+            <dt class=" w70"><i>寄卖</i></dt>
+            <dd class=" w110">
+                <a href=""   rel="nofollow">&bull;&nbsp;寄卖流程</a>
+                <a href=""   rel="nofollow">&bull;&nbsp;寄卖说明</a>
+                <a href=""   rel="nofollow">&bull;&nbsp;调价与撤卖</a>
+            </dd>
+        </div>
+    </div>
+     <div class="r2 w1225 wide row">
+         <nav class="navbar navbar-default navbar-nav" style="background:rgba(0,0,0,0); width:100%; border:0px;">
+  <div class="container">
+        <ol class="breadcrumb" style="background:rgba(0,0,0,0);color:#fff;margin-bottom:10px; text-align:center">
+          <li><a href="index.aspx">首页</a></li>
+          <li><a href="regist.aspx">注册</a></li>
+          <li><a href="Default.aspx">登录</a></li>
+          <li><a href="#">个人中心</a></li>
+          <li><a href="#">关于我们</a></li>
+        </ol>
+       <center><p style="margin-bottom:15px;">Copyright © 滁州市贝艺得网络技术有限公司 &nbsp&nbsp&nbsp&nbsp 备案号：皖ICP备16001383号-1</p></center>
+    
+  </div>
+</nav>
+    </div>
+
+
+   
+                 
+   
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+     <%--  <div id="footer">
+           <div id="footer_top">
+               <ul>
+               	<h4>用户服务</h4>
+				<li><a href="unEdit.aspx">帮助中心</a></li>
+				<li><a href="unEdit.aspx">配送方式</a></li>
+				<li><a href="unEdit.aspx">购物指南</a></li>
+				<li><a href="unEdit.aspx">支付方式</a></li>
+               </ul>
+                <ul>
+               	<h4>关于我们</h4>
+				<li><a href="unEdit.aspx">了解我们</a></li>
+				<li><a href="unEdit.aspx">加入我们</a></li>
+				<li><a href="unEdit.aspx">团队介绍</a></li>
+				<li><a href="contact.aspx">联系我们</a></li>
+               </ul>
+                <ul>
+               	<h4>我的账户</h4>
+				<li><a href="UserRegist.aspx">注册账户</a></li>
+				<li><a href="AddCar.aspx">我的购物车</a></li>
+				<li><a href="MyOrder.aspx">购物记录</a></li>
+				<li><a href="MyOrder.aspx">支付中心</a></li>
+               </ul>
+                <ul>
+               	<h4>欢迎联系我们</h4>
+                <br/>
+				<h5>中国.安徽.滁州</h5><br/>
+				<h5>电话：13955028299</h5>
+				<li>邮箱：<a href="mailto:info@example.com">nongmeme@163.com</a></li>
+               </ul>
+           </div>
+           <div id="footer_right">
+                <a href="#kong">回到顶部</a>
+           </div>
+           <div class="clearfix"></div>
+           <div id="footer_bottom">
+		<br/><br/>
+               <center><p>Copyright © 滁州市农么么网络科技有限公司</p></center>
+		<center><p>备案号:皖ICP备16001383号-1</p></center><br/><br/>
+           </div>
+       </div>
+    </div>--%>
+    </form>
+</body>
+</html>
