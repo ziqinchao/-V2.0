@@ -43,6 +43,7 @@
     <Compile Include="commOrderItem.cs" />
     <Compile Include="commProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShopCar.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

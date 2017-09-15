@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserPage/tetle.master" AutoEventWireup="true" Inherits="USER_GoodDetail" Codebehind="GoodDetail.aspx.cs" %>
 
+
+    
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <div class="container" style="margin-top:20px;border-bottom:1px solid #666;">
@@ -44,7 +46,7 @@
             <div class="form-group clearfix">
                 <div class="pull-left">
                      <asp:Button ID="addCar" runat="server" Text=" 添加购物车 " OnClick="addCar_Click" class="btn btn-danger" />
-                     <asp:Button ID="buy" runat="server" Text="购 买" OnClick="buy_Click" class="btn btn-primary" />
+                     <asp:Button ID="buy" runat="server" Text="购 买"  OnClientClick="return openMakeSure();" class="btn btn-primary" />
 					
                    
                 </div>

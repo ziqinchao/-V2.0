@@ -61,6 +61,16 @@
     color:Black;
     }
 </style>--%>
+
+ <script type="text/javascript">
+     function openMakeSure() {
+         //window.showModelessDialog('MakeSure.aspx');
+         //alert("我是客户端点击事件");
+         window.open("MakeSure.aspx", "", "width=200,height=200"); 
+         return false;
+     }     
+</script>
+
 </head>
 <body>  
     <form id="form1" runat="server">

@@ -125,6 +125,7 @@ public partial class USER_GoodDetail : System.Web.UI.Page
         }
         else
         {
+            
             string userphone = Session["userphone"].ToString().Trim();
             userguid = new DB_UserInfomation().SelectUserGuid(userphone);
             //if (new DataClass2().SaveShopCar(Session["username"].ToString(), hdID.Value, lbname.Text, ImageMapPhoto.ImageUrl, float.Parse(lbprice.Text), int.Parse(number.Text), float.Parse(totalPrice.Text)))

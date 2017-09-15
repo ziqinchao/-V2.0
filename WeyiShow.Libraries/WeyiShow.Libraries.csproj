@@ -50,7 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code.cs" />
+    <Compile Include="DB_OrderInfo.cs" />
+    <Compile Include="DB_OrderItem.cs" />
     <Compile Include="DB_ProductGood.cs" />
+    <Compile Include="DB_ReceiveInfo.cs" />
     <Compile Include="DB_ShopCar.cs" />
     <Compile Include="DB_UserInfomation.cs" />
     <Compile Include="GetGuid.cs" />

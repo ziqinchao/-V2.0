@@ -76,6 +76,7 @@
     <Content Include="img\backgrounds\.DS_Store" />
     <None Include="packages.config" />
     <Content Include="UserPage\GoodDetail.aspx" />
+    <Content Include="UserPage\MakeSure.aspx" />
     <Content Include="UserPage\ValidCode.ashx" />
     <Content Include="UserPage\indexm.master" />
     <Content Include="UserPage\assets\img\backgrounds\.DS_Store" />
@@ -140,6 +141,13 @@
     </Compile>
     <Compile Include="UserPage\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\MakeSure.aspx.cs">
+      <DependentUpon>MakeSure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\MakeSure.aspx.designer.cs">
+      <DependentUpon>MakeSure.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserPage\Regist.aspx.cs">
       <DependentUpon>Regist.aspx</DependentUpon>
