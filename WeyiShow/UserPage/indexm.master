@@ -58,8 +58,8 @@
 	      </div>
 	      <ul class="nav navbar-nav navbar-right">
 	        
-               <li><a href="ChangePwd.aspx">会员中心</a></li>
-               <li><a href="AddCar.aspx">购物车</a></li>
+               <li><a href="PersonInfo.aspx">会员中心</a></li>
+               <li><a href="GridCart.aspx">购物车</a></li>
                <li><asp:HyperLink ID="login" runat="server" NavigateUrl="~/USER/Default.aspx">登录</asp:HyperLink></li>
                <li><asp:HyperLink ID="register" runat="server" NavigateUrl="~/USER/regist.aspx">注册</asp:HyperLink></li>
                <li><asp:Label ID="huanying" runat="server" Text="欢迎:" ></asp:Label></li> 

@@ -40,9 +40,9 @@ namespace WeyiShow.Libraries
                 db.AddInParameter(cmd, "ProductId", DbType.String, ProductId);
                 db.AddInParameter(cmd, "ProductName", DbType.String, ProductName);
                 db.AddInParameter(cmd, "ImageUrl", DbType.String, ImageUrl);
-                db.AddInParameter(cmd, "Price", DbType.Double, Price);
+                db.AddInParameter(cmd, "Price", DbType.Double, decimal.Round(decimal.Parse(Price.ToString()),2));
                 db.AddInParameter(cmd, "Number", DbType.Int32, Number);
-                db.AddInParameter(cmd, "SumPrice", DbType.Double, SumPrice);
+                db.AddInParameter(cmd, "SumPrice", DbType.Double, decimal.Round(decimal.Parse(SumPrice.ToString()), 2));
                 db.ExecuteNonQuery(cmd);
                 return true;
             }
@@ -263,6 +263,29 @@ namespace WeyiShow.Libraries
             return list;
 
         }
+
+
+
+        /// <summary>
+        /// 根据相应条件，获取表【ShopCar】的记录
+        /// 编写日期：2017/9/20
+        /// 编写人：訾钦朝
+        /// </summary>
+        /// <param name="UserGuid"></param>
+        public DataView SelectByUserGuid(string UserGuid)
+        {
+
+            Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
+            string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
+                "SELECT UserGuid,ProductId,ProductName,ImageUrl,Price,Number,SumPrice FROM ShopCar Where  UserGuid=@UserGuid " :
+                "SELECT UserGuid,ProductId,ProductName,ImageUrl,Price,Number,SumPrice FROM ShopCar Where  UserGuid=:UserGuid ";
+            DbCommand cmd = db.GetSqlStringCommand(strSql);
+
+            db.AddInParameter(cmd, "UserGuid", DbType.String, UserGuid);
+            return db.ExecuteDataView(cmd);
+        }
+
+
 
 
 

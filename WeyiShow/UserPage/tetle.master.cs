@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WeyiShow.Libraries;
 
 public partial class USER_tetle : System.Web.UI.MasterPage
 {
@@ -36,4 +37,13 @@ public partial class USER_tetle : System.Web.UI.MasterPage
     {
         Response.Redirect("AllProduct.aspx?ProductName=" + searchtext.Text.Trim());
     }
+
+    public string GetReDe(string gg)
+    {
+        string s = Hidden1.Value;
+        string sss = new DB_ReceiveInfo().GetDetail(gg).ReceiveName;
+        return sss;
+    }
+
+
 }

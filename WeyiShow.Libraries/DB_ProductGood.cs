@@ -345,6 +345,30 @@ namespace WeyiShow.Libraries
         }
 
 
+        /// <summary>
+        /// 根据商品的id，获取表【ProductGood】的所有信息
+        /// 编写日期：2017/9/20
+        /// 编写人：訾钦朝
+        /// </summary>
+        /// <param name="ProductId"></param>
+        public DataView SelectByProductId(string ProductId)
+        {
+
+            Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
+            string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
+                "SELECT TJRGuid,ProductId,ProductName,Title,ImageUrl,Price,Class,DropDown,Topceng,FBData,Decriptions FROM ProductGood Where  ProductId=@ProductId " :
+                "SELECT TJRGuid,ProductId,ProductName,Title,ImageUrl,Price,Class,DropDown,Topceng,FBData,Decriptions FROM ProductGood Where  ProductId=:ProductId ";
+            DbCommand cmd = db.GetSqlStringCommand(strSql);
+
+            db.AddInParameter(cmd, "ProductId", DbType.String, ProductId);
+            return db.ExecuteDataView(cmd);
+        }
+
+
+
+
+
+
 
 
 
