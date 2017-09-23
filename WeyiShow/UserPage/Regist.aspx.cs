@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FineUI.Examples;
+using FineUI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,7 +10,7 @@ using WeyiShow.Libraries;
 
 namespace WeyiShow.UserPage
 {
-    public partial class Regist : System.Web.UI.Page
+    public partial class Regist : PageBase
     {
         string code = ""; //验证码    
         int codeLength = 6;//验证码长度   
@@ -62,7 +64,7 @@ namespace WeyiShow.UserPage
             {
                 if (yzm.Text.ToUpper().Equals(Session["ValidCode"].ToString().ToUpper()))
                 {                   
-                    bool bResult = userinfo.Insert(userguid, txtUserName.Text.Trim(), txtPwd.Text.Trim(), txtEmail.Text.Trim(), PhoneNum.Text.Trim(), txtAddress.Text.Trim(),"0",time);
+                    bool bResult = userinfo.Insert(userguid, txtUserName.Text.Trim(), txtPwd.Text.Trim(), txtEmail1.Text.Trim(), PhoneNum.Text.Trim(), txtAddress.Text.Trim(),"0",time);
                     if (bResult)
                     {
                         Response.Write("<script>alert('注册成功！');window.location.href = 'Default.aspx';</script>");

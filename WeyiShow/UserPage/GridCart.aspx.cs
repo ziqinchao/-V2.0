@@ -17,6 +17,7 @@ namespace WeyiShow.UserPage
         string userguid = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             userguid = new DB_UserInfomation().SelectUserGuid(Session["userphone"].ToString());
             if (!IsPostBack)
             {
@@ -24,6 +25,7 @@ namespace WeyiShow.UserPage
             }
         }
 
+        
         #region BindGrid
 
         private void BindGrid()
@@ -35,6 +37,24 @@ namespace WeyiShow.UserPage
             Grid1.SelectedRowIndexArray = new int[] { 0, 1 };
         }
 
+       
+
+       
+
+        // 根据行ID来获取行数据
+        private DataRow FindRowByID(int rowID)
+        {
+            DataTable table = new DB_ShopCar().SelectByUserGuid(userguid).Table;
+            foreach (DataRow row in table.Rows)
+            {
+                if (Convert.ToInt32(row["ProductID"]) == rowID)
+                {
+                    return row;
+                }
+            }
+            return null;
+        }
+
 
         #endregion
 
@@ -43,17 +63,19 @@ namespace WeyiShow.UserPage
         protected void btnGotoPay_Click(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("<ol>");
+            //sb.Append("<ol>");
             foreach(int rowIndex in Grid1.SelectedRowIndexArray) {
                 System.Web.UI.WebControls.TextBox tbxNumber = (System.Web.UI.WebControls.TextBox)Grid1.Rows[rowIndex].FindControl("tbxNumber");
 
-                sb.AppendFormat("<li>{0}（{1}）</li>", Grid1.DataKeys[rowIndex][0], tbxNumber.Text);
+                sb.AppendFormat("{0}.{1}!", Grid1.DataKeys[rowIndex][0], tbxNumber.Text);
             }
-            sb.Append("</ol><hr/>");
+            //sb.Append("</ol><hr/>");
 
-            sb.AppendFormat("共 {0} 件商品，总计 ¥{1}", Request.Form["TOTAL_NUMBER"], Request.Form["TOTAL_PRICE"]);
+            //sb.AppendFormat("共 {0} 件商品，总计 ¥{1}", Request.Form["TOTAL_NUMBER"], Request.Form["TOTAL_PRICE"]);
 
-            Alert.Show(sb.ToString(), MessageBoxIcon.Information);
+            //Alert.Show(sb.ToString(), MessageBoxIcon.Information);
+            //Response.Redirect("OrderSure.aspx?GridCart=" + sb.ToString());
+            this.Window1.GetShowReference("OrderSure.aspx?GridCart=" + sb.ToString(), "确认订单相关信息");
         }
 
         #endregion

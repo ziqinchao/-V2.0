@@ -287,6 +287,31 @@ namespace WeyiShow.Libraries
 
 
 
+        /// <summary>
+        /// 更新下订单后，付款前的购物车
+        /// 编写日期：2017/9/22
+        /// 编写人：訾钦朝
+        /// </summary>
+        /// <param name="UserGuid"></param>
+        /// <param name="ProductId"></param>
+        /// <param name="Number"></param>
+        public void UpdateNum(string UserGuid, string ProductId, int Number)
+        {
+
+            Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
+            string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
+                "UPDATE ShopCar SET Number=@Number WHERE  UserGuid=@UserGuid AND ProductId=@ProductId " :
+                "UPDATE ShopCar SET Number=:Number WHERE  UserGuid=:UserGuid AND ProductId=:ProductId ";
+            DbCommand cmd = db.GetSqlStringCommand(strSql);
+            db.AddInParameter(cmd, "Number", DbType.Int32, Number);
+
+            db.AddInParameter(cmd, "UserGuid", DbType.String, UserGuid);
+            db.AddInParameter(cmd, "ProductId", DbType.String, ProductId);
+            db.ExecuteNonQuery(cmd);
+        }
+
+
+
 
 
 

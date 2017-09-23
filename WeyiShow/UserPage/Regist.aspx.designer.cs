@@ -94,31 +94,22 @@ namespace WeyiShow.UserPage {
         protected global::System.Web.UI.WebControls.CompareValidator cvPwd;
         
         /// <summary>
-        /// txtEmail 控件。
+        /// PageManager1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::FineUI.PageManager PageManager1;
         
         /// <summary>
-        /// rfvEmail 控件。
+        /// txtEmail1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmail;
-        
-        /// <summary>
-        /// RegularExpressionValidator1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        protected global::FineUI.TextBox txtEmail1;
         
         /// <summary>
         /// txtAddress 控件。

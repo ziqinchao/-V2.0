@@ -1,5 +1,6 @@
 ﻿using FineUI;
 using FineUI.Examples;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,14 +15,25 @@ namespace WeyiShow.UserPage
     {
         string userguid = "";
         DB_ReceiveInfo dbri = new DB_ReceiveInfo();
+        DataTable table;
         protected void Page_Load(object sender, EventArgs e)
         {
             userguid = userguid = new DB_UserInfomation().SelectUserGuid(Session["userphone"].ToString());
-           
+            string s1 = Request.QueryString["GridCart"];
+            string s2 = Request.QueryString["ProductId"];
+            if (s1 != null)
+            {
+                BindGridCart();
+               // OutputSummaryData();
+            }
+            else if (s2 != null)
+            {
+                BindGrid();
+                //OutputSummaryData();
+            }
             if (!Page.IsPostBack)
             {
-                BindStringListToDropDownList();
-                BindGrid();
+                BindStringListToDropDownList();                
                 LoadData();
             }
 
@@ -34,8 +46,8 @@ namespace WeyiShow.UserPage
         {
             DataSet ds = dbri.SelectReceiveRemark(userguid);
             DataTable dt = ds.Tables[0];
-            
-            
+
+
             DropDownList1.DataTextField = "ReceiveRemark";
             DropDownList1.DataValueField = "RowGuid";
             DropDownList1.DataSource = dt;
@@ -43,6 +55,12 @@ namespace WeyiShow.UserPage
             DropDownList1.Items.Insert(0, new FineUI.ListItem("请选择", "00"));
         }
 
+
+        /// <summary>
+        /// DropDownList1的index改变事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void DropDownList1_SelectedIndexChanged1(object sender, EventArgs e)
         {
             string rowguid = "";
@@ -51,16 +69,16 @@ namespace WeyiShow.UserPage
                 rowguid = DropDownList1.SelectedValue;
                 //labResult.Text = String.Format("选中项：{0}（值：{1}）", DropDownList1.SelectedItem.Text, DropDownList1.SelectedValue);
             }
-           
+
             DataTable dt = dbri.SelectByRowGuid(rowguid).Tables[0];
             if (dt.Rows.Count > 0)
             {
                 UserName.Text = dt.Rows[0]["ReceiveName"].ToString();
-                TextBox1.Text= dt.Rows[0]["ReceivePhone"].ToString();
+                TextBox1.Text = dt.Rows[0]["ReceivePhone"].ToString();
                 TextBox2.Text = dt.Rows[0]["ReceivePost"].ToString();
                 TextBox3.Text = dt.Rows[0]["ReceiveAddress"].ToString();
             }
-            
+
 
         }
 
@@ -71,17 +89,15 @@ namespace WeyiShow.UserPage
 
         private void LoadData()
         {
-
             btnClose.OnClientClick = ActiveWindow.GetHideReference();
-
         }
 
 
         protected void btnSaveContinue_Click(object sender, EventArgs e)
         {
             // 1. 这里放置保存窗体中数据的逻辑
-            
-            
+
+
 
             // 2. 关闭本窗体，然后回发父窗体
             PageContext.RegisterStartupScript(ActiveWindow.GetHidePostBackReference());
@@ -91,20 +107,97 @@ namespace WeyiShow.UserPage
         {
             // 1. 这里放置保存窗体中数据的逻辑
 
-            
-
             // 2. 关闭本窗体，然后刷新父窗体
             PageContext.RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
         }
 
+        /// <summary>
+        /// 从商品详情页面获取商品信息并绑定到grid1
+        /// </summary>
         private void BindGrid()
         {
-            DataTable table = new DB_ProductGood().SelectByProductId(Request.QueryString["ProductId"]).Table;
-
+            table = new DB_ProductGood().SelectByProductId(Request.QueryString["ProductId"]).Table;
+            table.Columns.Add(new DataColumn("num", typeof(string)));
+            table.Rows[0]["num"] = 1;
             Grid1.DataSource = table;
             Grid1.DataBind();
         }
 
+        /// <summary>
+        /// 从购物车页面取出购物车信息的字符串，解析后绑定到grid1控件
+        /// </summary>
+        private void BindGridCart()
+        {
+            ///解析字符串
+            string strwhere = "";
+            List<string> a = new List<string>();
+            List<string> b = new List<string>();
+            string sss = Request.QueryString["GridCart"];
+            string[] rowStr = sss.Split('!');
+            for (int i = 0; i < rowStr.Length; i++)   //for遍历数组
+            {
+                string[] cellStr = rowStr[i].Split('.');
+                if(cellStr.Length==2)
+                {
+                    a.Add(cellStr[0]);
+                    b.Add(cellStr[1]);
+                    new DB_ShopCar().UpdateNum(userguid, cellStr[0], Convert.ToInt32(cellStr[1]));
+                    if (i == 0)
+                        strwhere += " and ProductId='" + cellStr[0] + "'";
+                    else
+                        strwhere += " or ProductId='" + cellStr[0] + "'";
+                }
+                
+            }
+            string[] num = b.ToArray();
+
+            //绑定数据到grid
+            table = new DB_ProductGood().SelectByProductIds(strwhere).Table;
+            table.Columns.Add(new DataColumn("num", typeof(string)));
+            for (int i = 0; i < num.Length; i++)
+            {
+                table.Rows[i]["num"] = num[i];
+            }
+            Grid1.DataSource = table;
+            Grid1.DataBind();
+
+        }
+
+        //获取单行的小计
+        protected string GetXiaoji(object priceobj, object numberobj)
+        {
+            float price = Convert.ToSingle(priceobj);
+            int number = Convert.ToInt32(numberobj);
+
+            return String.Format("{0:F}", price * number);
+        }
+
+        ///// <summary>
+        ///// 合计行
+        ///// </summary>
+        //private void OutputSummaryData()
+        //{
+        //    DataTable source = table;
+        //    float sumPrice = 0.0f;
+        //    foreach (DataRow row in source.Rows)
+        //    {
+        //        sumPrice += Convert.ToInt32(row["Donate"]);
+        //    }
+
+        //    JObject summary = new JObject();
+        //    summary.Add("sumPrice", sumPrice.ToString("F2"));
+
+
+        //    Grid1.SummaryData = summary;
+
+        //}
+
+
+        /// <summary>
+        /// 修改收货信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnEditClick_Click(object sender, EventArgs e)
         {
             if (btnEditClick.Text == "修改")
@@ -127,11 +220,12 @@ namespace WeyiShow.UserPage
                     btnEditClick.Text = "修改";
                     Alert.ShowInTop("修改成功！");
                 }
-                else {
+                else
+                {
                     Alert.ShowInTop("修改失败！");
                 }
             }
-            
+
         }
 
         protected void btnBuyClick_Click(object sender, EventArgs e)
@@ -139,6 +233,11 @@ namespace WeyiShow.UserPage
 
         }
 
+        /// <summary>
+        /// 添加收货地址
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             if (btnAdd.Text == "添加收货地址")
@@ -170,7 +269,7 @@ namespace WeyiShow.UserPage
                     Alert.ShowInTop("添加失败！");
                 }
             }
-           
+
         }
     }
 }

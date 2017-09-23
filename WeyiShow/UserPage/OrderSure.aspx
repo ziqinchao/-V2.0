@@ -8,9 +8,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <f:PageManager ID="PageManager1"  runat="server" />
+        <f:PageManager ID="PageManager1" runat="server" />
 
-         
+
 
         <f:Grid ID="Grid1" Width="800px" DataKeyNames="Id,Name" runat="server" >
             <Toolbars>
@@ -18,43 +18,37 @@
                     <Items>
                         <f:Button ID="btnClose" EnablePostBack="false" Text="关闭" runat="server" Icon="SystemClose">
                         </f:Button>
-
                         <f:ToolbarFill ID="ToolbarFill1" runat="server">
                         </f:ToolbarFill>
-
                         <f:ToolbarText ID="ToolbarText1" Text="请仔细确认订单相关信息" runat="server">
                         </f:ToolbarText>
-
                     </Items>
                 </f:Toolbar>
-                
             </Toolbars>
-            
+
             <Columns>
-                <%--<f:TemplateField>
+                <f:TemplateField>
                     <ItemTemplate>
                         <%# Container.DataItemIndex + 1 %>
                     </ItemTemplate>
-                </f:TemplateField>--%>
+                </f:TemplateField>
                 <f:BoundField DataField="ProductName" HeaderText="商品名称" />
                 <f:BoundField DataField="Title" HeaderText="标题" />
-                <f:BoundField DataField="Price" HeaderText="价格" />
                 <f:BoundField DataField="Class" HeaderText="类别" />
-                <%--<f:TemplateField HeaderText="商品名称">
+                <f:BoundField DataField="Price" HeaderText="价格" />
+                <f:BoundField DataField="num" HeaderText="数量" />
+                <f:TemplateField HeaderText="小计" Width="120px" ColumnID="sumPrice">
                     <ItemTemplate>
-                        <%# GetGender(Eval("ProductName")) %>
+                        <asp:Label runat="server" CssClass="xiaoji" Text='<%# "¥" + GetXiaoji(Eval("Price"), Eval("num")) %>'></asp:Label>
                     </ItemTemplate>
-                </f:TemplateField>--%>
-               <%-- <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
-                <f:CheckBoxField DataField="AtSchool" HeaderText="是否在校" />
-                <f:HyperLinkField HeaderText="所学专业" DataTextField="Major" DataTextFormatString="{0}"
-                    DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                    Target="_blank" ExpandUnusedSpace="true" />
-                <f:ImageField DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png"
-                    HeaderText="分组">
-                </f:ImageField>--%>
+                </f:TemplateField>
+
             </Columns>
         </f:Grid>
+        <div style="margin-bottom: 10px;">
+            <input type="hidden" id="TOTAL_PRICE" name="TOTAL_PRICE" />
+            总计：<span id="totalPrice" style="color: red; font-size: 1.5em; font-weight: bold;"></span>
+        </div>
         <f:Form ID="SimpleForm1" ShowBorder="false" ShowHeader="false"
             AutoScroll="true" BodyPadding="10px" runat="server">
             <%--<Toolbars>
@@ -127,9 +121,51 @@
 
             </Rows>
         </f:Form>
-
-
-       
     </form>
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var gridClientID = '<%= Grid1.ClientID %>';
+        var numberSelector = '.f-grid-tpl input.number';
+        var priceSelector = '.f-grid-tpl input.price';
+
+        function getRowNumber(row) {
+            var num = parseInt(row.find(numberSelector).val(), 10);
+            if (isNaN(num)) {
+                num = 0;
+            }
+            return num;
+        }
+        function getRowPrice(row) {
+            return parseFloat(row.find(priceSelector).val());
+        }
+
+        function updateTotal() {
+            var grid = F(gridClientID);
+            var selection = grid.getSelectionModel().getSelection();
+            var store = grid.getStore();
+
+            var total = 0;
+            $.each(selection, function (index, item) {
+                var rowIndex = store.indexOf(item);
+                var row = $(grid.body.el.dom).find('.x-grid-item').eq(rowIndex);
+                total += getRowNumber(row) * getRowPrice(row);
+            });
+
+            
+            $('#totalPrice').text("¥" + total.toFixed(2));
+
+            
+            $('#TOTAL_PRICE').val(total.toFixed(2));
+
+           
+        }
+
+    
+        // 页面第一次加载完成后调用的函数
+        F.ready(function () {
+            updateTotal();
+        });
+
+    </script>
 </body>
 </html>

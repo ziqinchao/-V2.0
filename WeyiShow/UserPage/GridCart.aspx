@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" 
+﻿<%@ Page Language="C#" AutoEventWireup="true"
     Inherits="WeyiShow.UserPage.GridCart" CodeFile="GridCart.aspx.cs" %>
 
 <!DOCTYPE html>
@@ -19,18 +19,18 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        
+
         <f:PageManager ID="PageManager1" AutoSizePanelID="Panel2" runat="server" />
         <f:Panel ID="Panel2" runat="server" ShowBorder="true" Layout="VBox" BoxConfigAlign="Stretch"
             BoxConfigPosition="Start" BodyPadding="5px" BoxConfigChildMargin="0 5 0 0"
             ShowHeader="false">
             <Items>
-                <f:Grid ID="Grid1" ShowBorder="true" BoxFlex="1" ShowHeader="true"  Title="购物车"
+                <f:Grid ID="Grid1" ShowBorder="true" BoxFlex="1" ShowHeader="true" Title="购物车"
                     EnableCollapse="true" runat="server" EnableCheckBoxSelect="true" CheckBoxSelectOnly="true"
-                    DataKeyNames="ProductID" EnableTextSelection="true">
+                    DataKeyNames="ProductID" DataIDField="ProductID" EnableTextSelection="true">
                     <Columns>
                         <f:RowNumberField />
-                        <f:BoundField Width="120px" DataField="ProductID" DataFormatString="{0}"  HeaderText="商品代码" />
+                        <f:BoundField Width="120px" DataField="ProductID" DataFormatString="{0}" HeaderText="商品代码" />
                         <f:BoundField DataField="ProductName" ExpandUnusedSpace="true" DataFormatString="{0}" HeaderText="商品名称" />
                         <f:BoundField Width="120px" DataField="Price" HeaderText="商品单价" DataFormatString="¥{0:F}" />
                         <f:TemplateField HeaderText="数量" Width="120px">
@@ -60,9 +60,15 @@
                         </div>
                         <div>
                             <f:Button runat="server" Text="去结算" Enabled="false" Size="Large" ID="btnGotoPay" OnClick="btnGotoPay_Click"></f:Button>
+
                         </div>
                     </div>
                 </f:ContentPanel>
+                <f:Window ID="Window1" IconUrl="~/res/images/16/11.png" runat="server" Hidden="true"
+                    IsModal="true" Target="Parent" EnableMaximize="true" EnableResize="true"
+                    Title="Popup Window 2" CloseAction="HidePostBack"
+                    EnableIFrame="true" Height="600px" Width="850px">
+                </f:Window>
             </Items>
         </f:Panel>
     </form>
@@ -158,6 +164,9 @@
             registerSelectionChangeEvents();
             updateTotal();
         });
+
+
+       
 
     </script>
 </body>
