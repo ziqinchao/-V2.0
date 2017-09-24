@@ -84,6 +84,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminPage\CommodityManage.aspx" />
+    <Content Include="AdminPage\GoodAddWindows.aspx" />
+    <Content Include="AdminPage\GoodEditWindows.aspx" />
+    <Content Include="AdminPage\index.aspx" />
     <Content Include="css\muban.css" />
     <Content Include="css\Tankuang.css" />
     <Content Include="extjs\ext-all.js" />
@@ -2684,6 +2688,7 @@
     <Content Include="extjs\res\theme-neptune.css" />
     <Content Include="extjs\res\theme-triton.css" />
     <Content Include="extjs\version.txt" />
+    <Content Include="images\Goods\20160120114429501.jpg" />
     <Content Include="img\backgrounds\.DS_Store" />
     <Content Include="captcha\captcha.ashx" />
     <Content Include="extjs\res\ext-theme-triton\font-awesome\fonts\fontawesome-webfont.eot" />
@@ -4497,6 +4502,34 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPage\CommodityManage.aspx.cs">
+      <DependentUpon>CommodityManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\CommodityManage.aspx.designer.cs">
+      <DependentUpon>CommodityManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\GoodAddWindows.aspx.cs">
+      <DependentUpon>GoodAddWindows.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\GoodAddWindows.aspx.designer.cs">
+      <DependentUpon>GoodAddWindows.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\GoodEditWindows.aspx.cs">
+      <DependentUpon>GoodEditWindows.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\GoodEditWindows.aspx.designer.cs">
+      <DependentUpon>GoodEditWindows.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="captcha\captcha.ashx.cs">
       <DependentUpon>captcha.ashx</DependentUpon>
     </Compile>

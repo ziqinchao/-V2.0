@@ -97,7 +97,6 @@ namespace WeyiShow.Libraries
         /// <param name="UserPhone"></param>
         public string SelectUserRole(string UserPhone)
         {
-
             Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
             string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
                 "SELECT UserRole FROM UserInfomation Where  UserPhone=@UserPhone " :
@@ -129,6 +128,27 @@ namespace WeyiShow.Libraries
 
             return db.ExecuteScalar(cmd).ToString();
         }
+
+
+        /// <summary>
+        /// 通过UserGuid查询姓名
+        /// 编写日期：2017/9/24
+        /// 编写人：訾钦朝
+        /// </summary>
+        /// <param name="UserGuid"></param>
+        public string SelectUserName(string UserGuid)
+        {
+
+            Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
+            string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
+                "SELECT UserName FROM UserInfomation Where  UserGuid=@UserGuid " :
+                "SELECT UserName FROM UserInfomation Where  UserGuid=:UserGuid ";
+            DbCommand cmd = db.GetSqlStringCommand(strSql);
+
+            db.AddInParameter(cmd, "UserGuid", DbType.String, UserGuid);
+            return db.ExecuteScalar(cmd).ToString();
+        }
+
 
 
 

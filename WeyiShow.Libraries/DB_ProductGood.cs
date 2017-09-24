@@ -19,16 +19,15 @@ namespace WeyiShow.Libraries
         /// 编写日期：2017/9/13
         /// 编写人：訾钦朝
         /// </summary>
-        public DataSet Select()
+        public DataView Select()
         {
-
             Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
             string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
                 "SELECT TJRGuid,ProductId,ProductName,Title,ImageUrl,Price,Class,DropDown,Topceng,FBData,Decriptions FROM ProductGood" :
                 "SELECT TJRGuid,ProductId,ProductName,Title,ImageUrl,Price,Class,DropDown,Topceng,FBData,Decriptions FROM ProductGood";
             DbCommand cmd = db.GetSqlStringCommand(strSql);
 
-            return db.ExecuteDataSet(cmd);
+            return db.ExecuteDataView(cmd);
         }
 
 

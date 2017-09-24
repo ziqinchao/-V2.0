@@ -7,19 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace WeyiShow.UserPage {
+namespace WeyiShow.AdminPage {
     
     
-    public partial class OrderSure {
-        
-        /// <summary>
-        /// head1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead head1;
+    public partial class GoodWindows {
         
         /// <summary>
         /// form1 控件。
@@ -40,22 +31,13 @@ namespace WeyiShow.UserPage {
         protected global::FineUI.PageManager PageManager1;
         
         /// <summary>
-        /// Panel1 控件。
+        /// SimpleForm1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Panel Panel1;
-        
-        /// <summary>
-        /// Grid1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Grid Grid1;
+        protected global::FineUI.Form SimpleForm1;
         
         /// <summary>
         /// Toolbar1 控件。
@@ -76,6 +58,24 @@ namespace WeyiShow.UserPage {
         protected global::FineUI.Button btnClose;
         
         /// <summary>
+        /// btnSaveContinue 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button btnSaveContinue;
+        
+        /// <summary>
+        /// btnSaveRefresh 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button btnSaveRefresh;
+        
+        /// <summary>
         /// ToolbarFill1 控件。
         /// </summary>
         /// <remarks>
@@ -94,156 +94,75 @@ namespace WeyiShow.UserPage {
         protected global::FineUI.ToolbarText ToolbarText1;
         
         /// <summary>
-        /// sum 控件。
+        /// ToolbarSeparator2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label sum;
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator2;
         
         /// <summary>
-        /// Panel2 控件。
+        /// ToolbarText2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Panel Panel2;
+        protected global::FineUI.ToolbarText ToolbarText2;
         
         /// <summary>
-        /// SimpleForm1 控件。
+        /// Label2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Form SimpleForm1;
+        protected global::FineUI.Label Label2;
         
         /// <summary>
-        /// DropDownList1 控件。
+        /// Label3 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.DropDownList DropDownList1;
+        protected global::FineUI.Label Label3;
         
         /// <summary>
-        /// UserName 控件。
+        /// NumberBox1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.TextBox UserName;
+        protected global::FineUI.NumberBox NumberBox1;
         
         /// <summary>
-        /// TextBox1 控件。
+        /// DatePicker1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.TextBox TextBox1;
+        protected global::FineUI.DatePicker DatePicker1;
         
         /// <summary>
-        /// TextBox2 控件。
+        /// TextArea2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.TextBox TextBox2;
+        protected global::FineUI.TextArea TextArea2;
         
         /// <summary>
-        /// TextBox3 控件。
+        /// HtmlEditor1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.TextBox TextBox3;
-        
-        /// <summary>
-        /// Label1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Label Label1;
-        
-        /// <summary>
-        /// TextBox8 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.TextBox TextBox8;
-        
-        /// <summary>
-        /// TextBox4 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.TextBox TextBox4;
-        
-        /// <summary>
-        /// TextBox5 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.TextBox TextBox5;
-        
-        /// <summary>
-        /// TextBox6 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.TextBox TextBox6;
-        
-        /// <summary>
-        /// TextBox7 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.TextBox TextBox7;
-        
-        /// <summary>
-        /// btnAdd 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button btnAdd;
-        
-        /// <summary>
-        /// btnEditClick 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button btnEditClick;
-        
-        /// <summary>
-        /// btnBuyClick 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button btnBuyClick;
+        protected global::FineUI.HtmlEditor HtmlEditor1;
     }
 }

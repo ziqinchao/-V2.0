@@ -24,12 +24,12 @@ namespace WeyiShow.UserPage
             if (s1 != null)
             {
                 BindGridCart();
-               // OutputSummaryData();
+                OutputSummaryData();
             }
             else if (s2 != null)
             {
                 BindGrid();
-                //OutputSummaryData();
+                OutputSummaryData();
             }
             if (!Page.IsPostBack)
             {
@@ -172,25 +172,27 @@ namespace WeyiShow.UserPage
             return String.Format("{0:F}", price * number);
         }
 
-        ///// <summary>
-        ///// 合计行
-        ///// </summary>
-        //private void OutputSummaryData()
-        //{
-        //    DataTable source = table;
-        //    float sumPrice = 0.0f;
-        //    foreach (DataRow row in source.Rows)
-        //    {
-        //        sumPrice += Convert.ToInt32(row["Donate"]);
-        //    }
+        /// <summary>
+        /// 合计行
+        /// </summary>
+        private void OutputSummaryData()
+        {
+            DataTable source = table;
+            double sumPrice = 0.0f;
+            foreach (DataRow row in source.Rows)
+            {
+                //System.Web.UI.WebControls.Label lable = FindControl("sum") as System.Web.UI.WebControls.Label;
+                //string a = lable.Text.ToString();
+                sumPrice += Convert.ToDouble(row["num"])*Convert.ToDouble(row["Price"]);
+            }
 
-        //    JObject summary = new JObject();
-        //    summary.Add("sumPrice", sumPrice.ToString("F2"));
+            JObject summary = new JObject();
+            summary.Add("sumPrice", sumPrice.ToString("F2"));
 
 
-        //    Grid1.SummaryData = summary;
+            Grid1.SummaryData = summary;
 
-        //}
+        }
 
 
         /// <summary>
@@ -247,6 +249,7 @@ namespace WeyiShow.UserPage
                 TextBox6.Hidden = false;
                 TextBox7.Hidden = false;
                 TextBox8.Hidden = false;
+                Label1.Hidden = false;
                 btnAdd.Text = "确定添加";
             }
             else
@@ -260,6 +263,7 @@ namespace WeyiShow.UserPage
                     TextBox6.Hidden = true;
                     TextBox7.Hidden = true;
                     TextBox8.Hidden = true;
+                    Label1.Hidden = true;
                     btnAdd.Text = "添加收货地址";
                     Alert.ShowInTop("添加成功！");
                     BindStringListToDropDownList();

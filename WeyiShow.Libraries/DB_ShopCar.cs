@@ -277,7 +277,7 @@ namespace WeyiShow.Libraries
 
             Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
             string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
-                "SELECT UserGuid,ProductId,ProductName,ImageUrl,Price,Number,SumPrice FROM ShopCar Where  UserGuid=@UserGuid " :
+                "SELECT UserGuid,ProductId,ProductName,ImageUrl,Price,Number,SumPrice FROM ShopCar Where  UserGuid=@UserGuid order by ProductId " :
                 "SELECT UserGuid,ProductId,ProductName,ImageUrl,Price,Number,SumPrice FROM ShopCar Where  UserGuid=:UserGuid ";
             DbCommand cmd = db.GetSqlStringCommand(strSql);
 

@@ -59,7 +59,7 @@
                             总计：<span id="totalPrice" style="color: red; font-size: 1.5em; font-weight: bold;"></span>
                         </div>
                         <div>
-                            <f:Button runat="server" Text="去结算" Enabled="false" Size="Large" ID="btnGotoPay" OnClick="btnGotoPay_Click"></f:Button>
+                            <f:Button runat="server" Text="确定购买" Enabled="false" Size="Large" ID="btnGotoPay" OnClick="btnGotoPay_Click"></f:Button>
 
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                 <f:Window ID="Window1" IconUrl="~/res/images/16/11.png" runat="server" Hidden="true"
                     IsModal="true" Target="Parent" EnableMaximize="true" EnableResize="true"
                     Title="Popup Window 2" CloseAction="HidePostBack"
-                    EnableIFrame="true" Height="600px" Width="850px">
+                    EnableIFrame="true" Height="690px" Width="870px">
                 </f:Window>
             </Items>
         </f:Panel>

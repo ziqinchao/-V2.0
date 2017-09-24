@@ -69,13 +69,9 @@ namespace WeyiShow.UserPage
 
                 sb.AppendFormat("{0}.{1}!", Grid1.DataKeys[rowIndex][0], tbxNumber.Text);
             }
-            //sb.Append("</ol><hr/>");
-
-            //sb.AppendFormat("共 {0} 件商品，总计 ¥{1}", Request.Form["TOTAL_NUMBER"], Request.Form["TOTAL_PRICE"]);
-
-            //Alert.Show(sb.ToString(), MessageBoxIcon.Information);
-            //Response.Redirect("OrderSure.aspx?GridCart=" + sb.ToString());
-            this.Window1.GetShowReference("OrderSure.aspx?GridCart=" + sb.ToString(), "确认订单相关信息");
+           
+            string openUrl = String.Format("OrderSure.aspx?GridCart={0}", sb.ToString());
+            PageContext.RegisterStartupScript(Window1.GetShowReference(openUrl, "确认订单相关信息"));
         }
 
         #endregion
