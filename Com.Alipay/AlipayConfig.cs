@@ -32,10 +32,10 @@ namespace Com.Alipay
         public static string key = "uf1mjyqcq38r1z7kgcmi51k5rzch65lg";
 
         // 服务器异步通知页面路径，需http://格式的完整路径，不能加?id=123这类自定义参数,必须外网可以正常访问
-        public static string notify_url = "http://www.weyishow.com/alipay.wap.create.direct.pay.by.user-CSHARP-UTF-8/notify_url.aspx";
+        public static string notify_url = "http://www.weyishow.com/UserPage/notify_url.aspx";
 
         // 页面跳转同步通知页面路径，需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-        public static string return_url = "http://www.weyishow.com/USER/return_url.aspx";
+        public static string return_url = "http://www.weyishow.com/UserPage/return_url.aspx";
 
         // 签名方式
         public static string sign_type = "MD5";

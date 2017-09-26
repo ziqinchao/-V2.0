@@ -14,6 +14,7 @@ namespace FineUI.Examples.iframe
         {
             if (!IsPostBack)
             {
+
                 string openUrl = String.Format("./passvalue_iframe_iframe.aspx?selected=<script>encodeURIComponent({0})</script>", tbxProvince.GetValueReference());
 
                 Button1.OnClientClick = Window1.GetSaveStateReference(tbxProvince.ClientID)

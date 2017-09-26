@@ -5,6 +5,11 @@
 <html>
 <head id="head1" runat="server">
     <title></title>
+    <link href="../css/muban.css" rel="stylesheet" type="text/css" />
+    <link href="../css/Tankuang.css" rel="stylesheet" type="text/css" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <style>
         .x-grid-row-summary .x-grid-cell-inner {
             font-weight: bold;
@@ -40,6 +45,7 @@
                                 <%# Container.DataItemIndex + 1 %>
                             </ItemTemplate>
                         </f:TemplateField>
+                        <f:BoundField DataField="ProductId" HeaderText="商品编号" />
                         <f:BoundField DataField="ProductName" HeaderText="商品名称" />
                         <f:BoundField DataField="Title" HeaderText="标题" />
                         <f:BoundField DataField="Class" HeaderText="类别" />
@@ -119,7 +125,8 @@
             </Items>
         </f:Panel>
         <div style="text-align: right; margin: 10px;">
-            <f:Button ID="btnBuyClick" Text="去付款" OnClick="btnBuyClick_Click" Size="Large" runat="server"></f:Button>
+            <asp:Button ID="btnBuyClick" runat="server" Text="去付款" class="btn btn-primary"  OnClick="btnBuyClick_Click"/>
+           <%-- <f:Button ID="btnBuyClick" Text="去付款" OnClick="btnBuyClick_Click" Size="Large" runat="server"></f:Button>--%>
         </div>
         <br />
 

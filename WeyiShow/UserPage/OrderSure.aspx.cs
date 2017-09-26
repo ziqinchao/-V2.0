@@ -1,4 +1,5 @@
-﻿using FineUI;
+﻿using Com.Alipay;
+using FineUI;
 using FineUI.Examples;
 using Newtonsoft.Json.Linq;
 using System;
@@ -15,7 +16,10 @@ namespace WeyiShow.UserPage
     {
         string userguid = "";
         DB_ReceiveInfo dbri = new DB_ReceiveInfo();
+        DB_OrderInfo dboin = new DB_OrderInfo();
+        DB_OrderItem dboit = new DB_OrderItem();
         DataTable table;
+        double sumPrice = 0.0f;
         protected void Page_Load(object sender, EventArgs e)
         {
             userguid = userguid = new DB_UserInfomation().SelectUserGuid(Session["userphone"].ToString());
@@ -178,7 +182,7 @@ namespace WeyiShow.UserPage
         private void OutputSummaryData()
         {
             DataTable source = table;
-            double sumPrice = 0.0f;
+            
             foreach (DataRow row in source.Rows)
             {
                 //System.Web.UI.WebControls.Label lable = FindControl("sum") as System.Web.UI.WebControls.Label;
@@ -232,7 +236,74 @@ namespace WeyiShow.UserPage
 
         protected void btnBuyClick_Click(object sender, EventArgs e)
         {
+            if (DropDownList1.SelectedIndex <= 0)
+            {
+                Alert.ShowInTop("请选择收货地址！");
+                BindStringListToDropDownList();
+                return;
+            }
+            //商户订单号，商户网站订单系统中唯一订单号，必填
+            string out_trade_no = new GetGuid().GetUserGuid();
+            DateTime time = DateTime.Now;
 
+            //添加订单信息表
+            int TJOI = dboin.Insert(out_trade_no, time, userguid,sumPrice.ToString(), "待付款",DropDownList1.SelectedValue);
+            if (TJOI == 1)
+            {
+                //遍历购物车
+                foreach (DataRow myRow in table.Rows)
+                {                    
+                    try
+                    {
+                        //添加订单列表表orderitem
+                        string ProductId = myRow[0].ToString();
+                        int num = Convert.ToInt32(myRow[8]);
+                        double Price = Convert.ToDouble(myRow[4]);
+
+                        dboit.Insert(out_trade_no, ProductId, Price, num, Price * num);
+                    }
+                    catch (Exception mess)
+                    {
+                        Alert.ShowInTop(mess.Message);
+                    }                    
+                }
+            }
+            //订单名称，必填
+            string subject = new DB_UserInfomation().SelectUserName(userguid)+"的订单";
+
+            //付款金额，必填
+            string total_fee = sumPrice.ToString().Trim();
+
+            //收银台页面上，商品展示的超链接，必填
+            string show_url = "我的订单";
+
+            //商品描述，可空
+            string body = "我的商品描述";
+            ////////////////////////////////////////////////////////////////////////////////////////////////
+
+            //把请求参数打包成数组
+            SortedDictionary<string, string> sParaTemp = new SortedDictionary<string, string>();
+            sParaTemp.Add("partner", Config.partner);
+            sParaTemp.Add("seller_id", Config.seller_id);
+            sParaTemp.Add("_input_charset", Config.input_charset.ToLower());
+            sParaTemp.Add("service", Config.service);
+            sParaTemp.Add("payment_type", Config.payment_type);
+            sParaTemp.Add("notify_url", Config.notify_url);
+            sParaTemp.Add("return_url", Config.return_url);
+            sParaTemp.Add("out_trade_no", out_trade_no);
+            sParaTemp.Add("subject", subject);
+            sParaTemp.Add("total_fee", total_fee);
+            sParaTemp.Add("show_url", show_url);
+            sParaTemp.Add("body", body);
+            //其他业务参数根据在线开发文档，添加参数.文档地址:https://doc.open.alipay.com/doc2/detail.htm?spm=a219a.7629140.0.0.2Z6TSk&treeId=60&articleId=103693&docType=1
+            //如sParaTemp.Add("参数名","参数值");
+
+            //建立请求
+            string sHtmlText = Submit.BuildRequest(sParaTemp, "get", "确认");
+            //PageContext.RegisterStartupScript(ActiveWindow.GetWriteBackValueReference(sHtmlText) + ActiveWindow.GetHideReference());
+            Response.Write(sHtmlText);
+            //PageContext.RegisterStartupScript(ActiveWindow.GetHidePostBackReference(sHtmlText));
+           
         }
 
         /// <summary>
@@ -275,5 +346,7 @@ namespace WeyiShow.UserPage
             }
 
         }
+
+        
     }
 }

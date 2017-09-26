@@ -384,6 +384,49 @@ namespace WeyiShow.Libraries
         }
 
 
+        /// <summary>
+        /// 表【ProductGood】的添加方法
+        /// 编写日期：2017/9/26
+        /// 编写人：訾钦朝
+        /// </summary>
+        /// <param name="TJRGuid"></param>
+        /// <param name="ProductId"></param>
+        /// <param name="ProductName"></param>
+        /// <param name="Title"></param>
+        /// <param name="ImageUrl"></param>
+        /// <param name="Price"></param>
+        /// <param name="Number"></param>
+        /// <param name="Class"></param>
+        /// <param name="DropDown"></param>
+        /// <param name="Topceng"></param>
+        /// <param name="FBData"></param>
+        /// <param name="Decriptions"></param>
+        public int Insert(string TJRGuid, string ProductId, string ProductName, string Title, string ImageUrl, string Price, int Number, string Class, string DropDown, int Topceng, DateTime FBData, string Decriptions)
+        {
+
+            Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
+            string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
+                "INSERT INTO ProductGood(TJRGuid,ProductId,ProductName,Title,ImageUrl,Price,Number,Class,DropDown,Topceng,FBData,Decriptions) VALUES(@TJRGuid,@ProductId,@ProductName,@Title,@ImageUrl,@Price,@Number,@Class,@DropDown,@Topceng,@FBData,@Decriptions) " :
+                "INSERT INTO ProductGood(TJRGuid,ProductId,ProductName,Title,ImageUrl,Price,Number,Class,DropDown,Topceng,FBData,Decriptions) VALUES(:TJRGuid,:ProductId,:ProductName,:Title,:ImageUrl,:Price,:Number,:Class,:DropDown,:Topceng,:FBData,:Decriptions)";
+            DbCommand cmd = db.GetSqlStringCommand(strSql);
+
+            db.AddInParameter(cmd, "TJRGuid", DbType.String, TJRGuid);
+            db.AddInParameter(cmd, "ProductId", DbType.String, ProductId);
+            db.AddInParameter(cmd, "ProductName", DbType.String, ProductName);
+            db.AddInParameter(cmd, "Title", DbType.String, Title);
+            db.AddInParameter(cmd, "ImageUrl", DbType.String, ImageUrl);
+            db.AddInParameter(cmd, "Price", DbType.String, Price);
+            db.AddInParameter(cmd, "Number", DbType.Int32, Number);
+            db.AddInParameter(cmd, "Class", DbType.String, Class);
+            db.AddInParameter(cmd, "DropDown", DbType.String, DropDown);
+            db.AddInParameter(cmd, "Topceng", DbType.Int32, Topceng);
+            db.AddInParameter(cmd, "FBData", DbType.DateTime, FBData);
+            db.AddInParameter(cmd, "Decriptions", DbType.String, Decriptions);
+            return db.ExecuteNonQuery(cmd);
+        }
+
+
+
 
 
 

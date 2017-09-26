@@ -21,6 +21,7 @@ namespace WeyiShow.UserPage
             userguid = new DB_UserInfomation().SelectUserGuid(Session["userphone"].ToString());
             if (!IsPostBack)
             {
+                
                 BindGrid();
             }
         }
@@ -72,6 +73,8 @@ namespace WeyiShow.UserPage
            
             string openUrl = String.Format("OrderSure.aspx?GridCart={0}", sb.ToString());
             PageContext.RegisterStartupScript(Window1.GetShowReference(openUrl, "确认订单相关信息"));
+            //PageContext.Redirect(openUrl);
+
         }
 
         #endregion

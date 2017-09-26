@@ -172,7 +172,7 @@
                                     <f:TreeNode Text="订单管理" NavigateUrl="~/hello.aspx"></f:TreeNode>
                                     <f:TreeNode Text="用户管理" NavigateUrl="~/login.aspx"></f:TreeNode>
                                     <f:TreeNode Text="商品管理" NavigateUrl="CommodityManage.aspx"></f:TreeNode>
-                                    <f:TreeNode Text="上传商品" NavigateUrl="~/login.aspx"></f:TreeNode>
+                                    <f:TreeNode Text="上传商品" NavigateUrl="UploadGoods.aspx"></f:TreeNode>
                                     <f:TreeNode Text="实名认证审核" NavigateUrl=""></f:TreeNode>
 
                                 </f:TreeNode>

@@ -113,17 +113,17 @@
                     <label for="txtEmail1" class="col-sm-2 control-label">邮箱</label>
                     <div class="col-sm-6">
                         <div style="float: left;">
-                            <f:PageManager ID="PageManager1" runat="server" />
-                            <f:TextBox ID="txtEmail1" CssClass="form-control" runat="server" ShowLabel="false" >
-                            </f:TextBox>
+                            
+                            <asp:TextBox ID="txtEmail" CssClass="form-control" runat="server" Style="width: 300px;" >
+                            </asp:TextBox>
                         </div>
-                        <%-- <div style="float: left;">
+                         <div style="float: left;">
                  <asp:RequiredFieldValidator ID="rfvEmail" runat="server" 
                         ControlToValidate="txtEmail" ErrorMessage="请输入邮箱" ValidationGroup="UserRegist">*</asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                         ControlToValidate="txtEmail" ErrorMessage="请输入正确的邮箱" 
                         ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                </div>--%>
+                </div>
                     </div>
                 </div>
 
@@ -239,43 +239,6 @@
         </div>
     </nav>
 
-    <script type="text/javascript">
-        var txtEmailID = '<%= txtEmail1.ClientID %>';
-
-        F.ready(function () {
-
-            var availableTags = [
-                "qq.com",
-                "163.com",
-                "gmail.com",
-                "outlook.com",
-                "126.com",
-                "sina.com",
-                "yahoo.com",
-                "sohu.com",
-                "foxmail.com",
-                "live.com",
-                "mail.ustc.edu.cn"];
-
-
-            function getFullEmails(name) {
-                var emails = [];
-                for (var i = 0, count = availableTags.length; i < count; i++) {
-                    emails.push(name + "@" + availableTags[i]);
-                }
-                return emails;
-            }
-
-            $('#' + txtEmailID + ' input').autocomplete({
-                source: function (request, response) {
-                    if (request.term.indexOf('@') === -1) {
-                        response(getFullEmails(request.term));
-                    }
-                }
-            });
-
-        });
-    </script>
 
 
 </body>
