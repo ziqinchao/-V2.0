@@ -22,7 +22,7 @@ namespace WeyiShow.UserPage
             }
             else
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("UserPage/Login.aspx");
             }
 
             GlobleClass.ExecBeforPageLoad(this.Page);

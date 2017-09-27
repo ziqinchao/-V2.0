@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WeyiShow.Libraries;
+using WeyiShow.Yunpian;
+using Newtonsoft.Json;
+using WeyiShow.MODELS;
 
 namespace WeyiShow
 {
@@ -17,7 +20,13 @@ namespace WeyiShow
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            TextBox2.Text = new IPCX().IPcx(TextBox1.Text);
+            string ss= new Code().SingleSend();
+            YunResult yunpian = JsonConvert.DeserializeObject<YunResult>(ss);
+            TextBox2.Text = yunpian.code + yunpian.msg + yunpian.mobile;
         }
     }
+
+
+   
+
 }

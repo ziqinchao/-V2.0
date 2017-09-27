@@ -7,13 +7,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WeyiShow.Libraries;
-using WeyiShow.Yunpian;
 
 namespace WeyiShow.UserPage
 {
     public partial class Regist : System.Web.UI.Page
     {
-        Code co = new Code();
+        YunpianCode co = new YunpianCode();
         DB_UserInfomation userinfo = new DB_UserInfomation();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,8 +34,8 @@ namespace WeyiShow.UserPage
             string code = co.GetRandom(6);
             Session["Sjcode"] = code;
             // Response.Write("<script> alert('" + code.ToString() + "'); </script> ");
-            bool isSend = co.sendSms(phone, code);
-            if (isSend)
+            string isSend = co.SingleSend(phone, code);
+            if (Convert.ToInt32(isSend)==0)
             {
                 this.Page.ClientScript.RegisterStartupScript(this.Page.GetType(), "myscript", "<script>djs();</script>");
             }

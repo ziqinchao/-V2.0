@@ -4693,6 +4693,7 @@
     <Content Include="UserPage\notify_url.aspx" />
     <Content Include="UserPage\OrderSure.aspx" />
     <Content Include="UserPage\PersonInfo.aspx" />
+    <Content Include="UserPage\Regist.aspx" />
     <Content Include="UserPage\return_url.aspx" />
     <Content Include="UserPage\ValidCode.ashx" />
     <Content Include="UserPage\indexm.master" />
@@ -4728,7 +4729,6 @@
     <Content Include="UserPage\assets\img\backgrounds\3.jpg" />
     <Content Include="UserPage\index.aspx" />
     <Content Include="UserPage\Login.aspx" />
-    <Content Include="UserPage\Regist.aspx" />
     <Content Include="UserPage\GoodDetail.aspx" />
     <Content Include="UserPage\WebForm1.aspx" />
     <Content Include="Web.config" />
@@ -4873,10 +4873,6 @@
     <ProjectReference Include="..\WeyiShow.MODELS\WeyiShow.MODELS.csproj">
       <Project>{46f72624-6390-44a6-8b31-f82c95c5d40c}</Project>
       <Name>WeyiShow.MODELS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WeyiShow.Yunpian\WeyiShow.Yunpian.csproj">
-      <Project>{4135d8d7-6b3c-4f7b-94d4-690b56ec8efd}</Project>
-      <Name>WeyiShow.Yunpian</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
