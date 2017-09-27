@@ -22,7 +22,7 @@ namespace WeyiShow.UserPage
         double sumPrice = 0.0f;
         protected void Page_Load(object sender, EventArgs e)
         {
-            userguid = userguid = new DB_UserInfomation().SelectUserGuid(Session["userphone"].ToString());
+            userguid = new DB_UserInfomation().SelectUserGuid(Session["userphone"].ToString());
             string s1 = Request.QueryString["GridCart"];
             string s2 = Request.QueryString["ProductId"];
             if (s1 != null)

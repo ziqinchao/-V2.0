@@ -54,7 +54,7 @@ namespace WeyiShow.UserPage
                     Session.Add("userphone", txtUserPhone.Text.Trim());
                     if (int.Parse(new DB_UserInfomation().SelectUserRole(txtUserPhone.Text)) == 1)
                     {
-                        Response.Redirect("~/MANAGER/ChangePwd.aspx");
+                        Response.Redirect("../AdminPage/index.aspx");
                     }
                     else if (int.Parse(new DB_UserInfomation().SelectUserRole(txtUserPhone.Text)) == 0)
                     {

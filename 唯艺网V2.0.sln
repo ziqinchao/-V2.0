@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeyiShow.MODELS", "WeyiShow
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Com.Alipay", "Com.Alipay\Com.Alipay.csproj", "{D63BC29C-E063-4B54-9669-0B2AE3B2DCC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeyiShow.Yunpian", "WeyiShow.Yunpian\WeyiShow.Yunpian.csproj", "{4135D8D7-6B3C-4F7B-94D4-690B56EC8EFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D63BC29C-E063-4B54-9669-0B2AE3B2DCC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D63BC29C-E063-4B54-9669-0B2AE3B2DCC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D63BC29C-E063-4B54-9669-0B2AE3B2DCC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4135D8D7-6B3C-4F7B-94D4-690B56EC8EFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4135D8D7-6B3C-4F7B-94D4-690B56EC8EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4135D8D7-6B3C-4F7B-94D4-690B56EC8EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4135D8D7-6B3C-4F7B-94D4-690B56EC8EFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

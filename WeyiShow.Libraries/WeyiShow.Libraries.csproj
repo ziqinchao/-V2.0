@@ -58,13 +58,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Yunpian, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\yunpian-net-sdk-master\yunpian-net-sdk-master\YunpianSDKTest\bin\Debug\Yunpian.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Code.cs" />
     <Compile Include="DB_OrderInfo.cs" />
     <Compile Include="DB_OrderItem.cs" />
     <Compile Include="DB_ProductGood.cs" />

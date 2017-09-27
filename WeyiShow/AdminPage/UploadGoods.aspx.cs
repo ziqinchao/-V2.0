@@ -11,9 +11,26 @@ namespace WeyiShow.AdminPage
 {
     public partial class UploadGoods : PageBase
     {
+
+        string userguid = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            //nonephoto.jpg
+            if (Session["userphone"].ToString() != "")
+            {
+                userguid = new DB_UserInfomation().SelectUserGuid(Session["userphone"].ToString());
+                if (int.Parse(new DB_UserInfomation().SelectUserRole(Session["userphone"].ToString())) == 0)
+                {
+                    Response.Redirect("../UserPage/index.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("../UserPage/Login.aspx");
+            }
+            if (!Page.IsPostBack)
+            {
+                
+            }
         }
 
 
@@ -54,11 +71,16 @@ namespace WeyiShow.AdminPage
             }
             string productid = new GetGuid().GetUserGuid();
             DB_ProductGood dbpg = new DB_ProductGood();
-            int i = dbpg.Insert("", productid, GoodName.Text, GoodTitle.Text, imgPhoto.ImageUrl, GoodPrice.Text, Convert.ToInt32(GoodNum.Text), GoodClass.Text, "", '0', DateTime.Now, CKEditor1.Text);
+            int i = dbpg.Insert(userguid, productid, GoodName.Text, GoodTitle.Text, imgPhoto.ImageUrl, GoodPrice.Text, Convert.ToInt32(GoodNum.Text), GoodClass.Text, "", '0', DateTime.Now, CKEditor1.Text);
             if (i == 1)
             {
                 filePhoto.Reset();
                 GoodName.Reset();
+                GoodPrice.Reset();
+                GoodTitle.Reset();
+                GoodClass.Reset();
+                CKEditor1.Text = "";
+                Alert.ShowInTop("添加成功！");
             }
             //Alert.ShowInTop("用户名：" + tbxUserName.Text + "<br/>" +
             //        "邮箱：" + tbxEmail.Text + "<br/>" +

@@ -13,18 +13,19 @@ namespace WeyiShow.UserPage
 {
     public partial class index : System.Web.UI.Page
     {
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["userphone"] != null)
             {
-                if (int.Parse(new DB_UserInfomation().SelectUserRole(Session["userphone"].ToString())) == 1)
-                {
-                    Response.Redirect("Default.aspx");
-                }
+
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
             }
 
-             GlobleClass.ExecBeforPageLoad(this.Page);
+            GlobleClass.ExecBeforPageLoad(this.Page);
             query();
             query2();
             query3();

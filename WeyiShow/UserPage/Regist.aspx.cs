@@ -7,15 +7,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WeyiShow.Libraries;
+using WeyiShow.Yunpian;
 
 namespace WeyiShow.UserPage
 {
     public partial class Regist : System.Web.UI.Page
     {
-        string code = ""; //验证码    
-        int codeLength = 6;//验证码长度   
         Code co = new Code();
-        int num = 0;
         DB_UserInfomation userinfo = new DB_UserInfomation();
         protected void Page_Load(object sender, EventArgs e)
         {

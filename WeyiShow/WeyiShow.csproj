@@ -4874,6 +4874,10 @@
       <Project>{46f72624-6390-44a6-8b31-f82c95c5d40c}</Project>
       <Name>WeyiShow.MODELS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WeyiShow.Yunpian\WeyiShow.Yunpian.csproj">
+      <Project>{4135d8d7-6b3c-4f7b-94d4-690b56ec8efd}</Project>
+      <Name>WeyiShow.Yunpian</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
