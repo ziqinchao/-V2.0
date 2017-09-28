@@ -33,7 +33,8 @@ namespace WeyiShow.AdminPage
 
         protected void btnzhuxiao_Click(object sender, EventArgs e)
         {
-
+            Session.Remove("userphone");
+            Response.Redirect("~/UserPage/index.aspx");
         }
     }
 }

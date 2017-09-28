@@ -11,6 +11,9 @@ using System.Web.UI.HtmlControls;
 using System.Collections.Specialized;
 using System.Collections.Generic;
 using Com.Alipay;
+using FineUI.Examples;
+using WeyiShow.Libraries;
+using FineUI;
 
 /// <summary>
 /// 功能：页面跳转同步通知页面
@@ -25,7 +28,7 @@ using Com.Alipay;
 /// 可放入HTML等美化页面的代码、商户业务逻辑程序代码
 /// 该页面可以使用ASP.NET开发工具调试，也可以使用写文本函数LogResult进行调试
 /// </summary>
-public partial class return_url : System.Web.UI.Page
+public partial class return_url : PageBase
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -40,7 +43,7 @@ public partial class return_url : System.Web.UI.Page
             {
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 //请在这里加上商户的业务逻辑程序代码
-
+                
 
                 //——请根据您的业务逻辑来编写程序（以下代码仅作参考）——
                 //获取支付宝的通知返回参数，可参考技术文档中页面跳转同步通知参数列表
@@ -55,10 +58,21 @@ public partial class return_url : System.Web.UI.Page
 
                 //交易状态
                 string trade_status = Request.QueryString["trade_status"];
-
+                string sumPrice = Request.QueryString["total_fee"];
+                string notify_time = Request.QueryString["notify_time"];
+                string subject = Request.QueryString["subject"];
 
                 if (Request.QueryString["trade_status"] == "TRADE_FINISHED" || Request.QueryString["trade_status"] == "TRADE_SUCCESS")
                 {
+                    int issuc= new DB_OrderInfo().UpdateState(out_trade_no, "已付款");
+                    if (issuc == 1)
+                    {
+                        Label1.Text = "付款成功，卖家已收到，请耐心等待";
+                        productid.Text = out_trade_no;
+                        sumprice.Text = sumPrice;
+                        time.Text = notify_time;
+                        xiangqing.Text = subject;
+                    }
                     //判断该笔订单是否在商户网站中已经做过处理
                     //如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
                     //如果有做过处理，不执行商户的业务程序
@@ -68,8 +82,7 @@ public partial class return_url : System.Web.UI.Page
                     Response.Write("trade_status=" + Request.QueryString["trade_status"]);
                 }
 
-                //打印页面
-                Response.Write("验证成功<br />");
+                
 
                 //——请根据您的业务逻辑来编写程序（以上代码仅作参考）——
 
@@ -77,13 +90,24 @@ public partial class return_url : System.Web.UI.Page
             }
             else//验证失败
             {
-                Response.Write("验证失败");
+                Label1.Text = "付款失败，请重试";
             }
         }
         else
         {
             Response.Write("无返回参数");
         }
+
+        if (!IsPostBack)
+        {
+            LoadData();
+        }
+    }
+
+
+    private void LoadData()
+    {
+        btnClose.OnClientClick = ActiveWindow.GetHideReference();
     }
 
     /// <summary>

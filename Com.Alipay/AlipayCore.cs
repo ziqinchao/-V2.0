@@ -93,7 +93,7 @@ namespace Com.Alipay
         public static void LogResult(string sWord)
         {
             string strPath = Config.log_path + "\\" + "alipay_log_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".txt";
-            StreamWriter fs = new StreamWriter(strPath, false, System.Text.Encoding.Default);
+            StreamWriter fs = new StreamWriter(strPath, true, System.Text.Encoding.Default);
             fs.Write(sWord);
             fs.Close();
         }

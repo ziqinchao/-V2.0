@@ -69,9 +69,10 @@ namespace WeyiShow.AdminPage
                 Alert.ShowInTop("请先上传商品照片！");
                 return;
             }
+
             string productid = new GetGuid().GetUserGuid();
             DB_ProductGood dbpg = new DB_ProductGood();
-            int i = dbpg.Insert(userguid, productid, GoodName.Text, GoodTitle.Text, imgPhoto.ImageUrl, GoodPrice.Text, Convert.ToInt32(GoodNum.Text), GoodClass.Text, "", '0', DateTime.Now, CKEditor1.Text);
+            int i = dbpg.Insert(userguid, productid, GoodName.Text, GoodTitle.Text, imgPhoto.ImageUrl, GoodPrice.Text, Convert.ToInt32(GoodNum.Text), GoodClass.SelectedItem.Text, "", '0', DateTime.Now, CKEditor1.Text);
             if (i == 1)
             {
                 filePhoto.Reset();

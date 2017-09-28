@@ -13,13 +13,13 @@ namespace WeyiShow.UserPage {
     public partial class index {
         
         /// <summary>
-        /// dlResult 控件。
+        /// Repeater1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dlResult;
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
         
         /// <summary>
         /// dlResult2 控件。
@@ -28,7 +28,7 @@ namespace WeyiShow.UserPage {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dlResult2;
+        protected global::System.Web.UI.WebControls.Repeater dlResult2;
         
         /// <summary>
         /// dlResult3 控件。
@@ -37,6 +37,6 @@ namespace WeyiShow.UserPage {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dlResult3;
+        protected global::System.Web.UI.WebControls.Repeater dlResult3;
     }
 }

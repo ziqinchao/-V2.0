@@ -4700,6 +4700,7 @@
     <Content Include="UserPage\assets\img\backgrounds\.DS_Store" />
     <Content Include="UserPage\tetle.master" />
     <Content Include="ckeditor\.htaccess" />
+    <Content Include="WebForm1.aspx" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -4730,7 +4731,6 @@
     <Content Include="UserPage\index.aspx" />
     <Content Include="UserPage\Login.aspx" />
     <Content Include="UserPage\GoodDetail.aspx" />
-    <Content Include="UserPage\WebForm1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -4792,6 +4792,9 @@
     <Compile Include="UserPage\GridCart.aspx.designer.cs">
       <DependentUpon>GridCart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserPage\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserPage\notify_url.aspx.cs">
       <DependentUpon>notify_url.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4803,9 +4806,6 @@
     <Compile Include="UserPage\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserPage\index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserPage\indexm.master.cs">
       <DependentUpon>indexm.master</DependentUpon>
@@ -4839,6 +4839,9 @@
       <DependentUpon>return_url.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="UserPage\return_url.aspx.designer.cs">
+      <DependentUpon>return_url.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserPage\tetle.master.cs">
       <DependentUpon>tetle.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4853,11 +4856,11 @@
     <Compile Include="UserPage\GoodDetail.aspx.designer.cs">
       <DependentUpon>GoodDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserPage\WebForm1.aspx.cs">
+    <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserPage\WebForm1.aspx.designer.cs">
+    <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

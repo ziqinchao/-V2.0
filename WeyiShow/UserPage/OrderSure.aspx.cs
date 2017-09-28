@@ -289,7 +289,7 @@ namespace WeyiShow.UserPage
             sParaTemp.Add("service", Config.service);
             sParaTemp.Add("payment_type", Config.payment_type);
             sParaTemp.Add("notify_url", Config.notify_url);
-            sParaTemp.Add("return_url", Config.return_url);
+            //sParaTemp.Add("return_url", Config.return_url);
             sParaTemp.Add("out_trade_no", out_trade_no);
             sParaTemp.Add("subject", subject);
             sParaTemp.Add("total_fee", total_fee);

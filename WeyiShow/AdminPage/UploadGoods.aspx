@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="True" Inherits="WeyiShow.AdminPage.UploadGoods" Codebehind="UploadGoods.aspx.cs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="True" Inherits="WeyiShow.AdminPage.UploadGoods" CodeFile="UploadGoods.aspx.cs" %>
 
 <!DOCTYPE html>
 <html>
@@ -34,7 +34,7 @@
                 <f:NumberBox Label="总数量" ID="GoodNum" runat="server"
                     NoDecimal="True" NoNegative="True" Required="True"
                     ShowRedStar="True" MinValue="0" />
-                <f:DropDownList runat="server" ID="GoodClass" Label="类别">
+                <f:DropDownList runat="server" ID="GoodClass" AutoPostBack="true" Label="类别">
                     <f:ListItem Text="雕塑" Value="Value1" Selected="true" />
                     <f:ListItem Text="编织" Value="Value2" />
                     <f:ListItem Text="油画" Value="Value3" />

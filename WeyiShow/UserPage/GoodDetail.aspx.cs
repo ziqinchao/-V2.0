@@ -16,7 +16,7 @@ namespace WeyiShow.UserPage
         DB_ReceiveInfo dbri = new DB_ReceiveInfo();
         protected void Page_Load(object sender, EventArgs e)
         {
-            userguid = new DB_UserInfomation().SelectUserGuid(Session["userphone"].ToString());
+           
             if (!Page.IsPostBack)
             {
                 if (Request["ProductId"] != null && Request["ProductId"].ToString().Trim().Length > 0)
@@ -62,10 +62,11 @@ namespace WeyiShow.UserPage
             if (Session["userphone"] == null)
             {
                 Response.Write("<script>alert('请重新登录！')</script>");
-                Response.Redirect("Default.aspx");
+                Response.Redirect("Login.aspx");
             }
             else
             {
+                userguid = new DB_UserInfomation().SelectUserGuid(Session["userphone"].ToString());
                 if (new DB_ShopCar().Insert(userguid, hdID.Value, new DB_ProductGood().GetDetail(hdID.Value).ProductName, new DB_ProductGood().GetDetail(hdID.Value).ImageUrl, float.Parse(lbprice.Text.ToString()), '1', float.Parse(lbprice.Text)))
                 {
                     GlobleClass.PopInfo(this.Page, "添加购物车成功！");

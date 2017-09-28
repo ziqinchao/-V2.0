@@ -68,7 +68,7 @@ public partial class USER_AddCar : PageBase
             if (Session["username"] == null)
             {
                 Response.Write("<script>alert('请重新登录！')</script>");
-                Response.Redirect("Default.aspx");
+                Response.Redirect("Login.aspx");
             }
             //if (delete(id))
             //{
@@ -84,7 +84,7 @@ public partial class USER_AddCar : PageBase
             if (Session["username"] == null)
             {
                 Response.Write("<script>alert('请重新登录！')</script>");
-                Response.Redirect("Default.aspx");
+                Response.Redirect("Login.aspx");
             }
             //if (new DataClass3().getNumber(id) < 1)
             //{
@@ -103,7 +103,7 @@ public partial class USER_AddCar : PageBase
             if (Session["username"] == null)
             {
                 Response.Write("<script>alert('请重新登录！')</script>");
-                Response.Redirect("Default.aspx");
+                Response.Redirect("Login.aspx");
             }
             //if (new DataClass3().addNum(id, Session["username"].ToString(), (e.Item.FindControl("Label3") as Label).Text))
             //{

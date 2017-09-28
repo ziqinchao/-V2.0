@@ -5,29 +5,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title></title>
-   <%-- <meta name="sourcefiles" content="grid_iframe_window.aspx" />--%>
+    <%-- <meta name="sourcefiles" content="grid_iframe_window.aspx" />--%>
     <link href="../css/muban.css" rel="stylesheet" type="text/css" />
     <link href="../css/Tankuang.css" rel="stylesheet" type="text/css" />
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <link rel="icon" href="../favicon.ico" type="image/x-icon" />
-     <style type="text/css">
+    <style type="text/css">
         .x-grid-row-summary .x-grid-cell-inner {
             font-weight: bold;
             color: red;
         }
+
         .totalpanel .x-panel-body {
             border-top-width: 0 !important;
         }
     </style>
 
-  
+
 
 </head>
 <body>
     <form id="form1" runat="server">
-       <input id="Hidden1" type="hidden"  runat="server"/>
+        <input id="Hidden1" type="hidden" runat="server" />
         <nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
@@ -69,8 +70,11 @@
 	        
                <li><a href="ChangePwd.aspx">会员中心</a></li>
                <li><a href="AddCar.aspx">购物车</a></li>
-               <li><asp:HyperLink ID="login" runat="server" NavigateUrl="~/USER/Default.aspx">登录</asp:HyperLink></li>
-               <li><asp:HyperLink ID="register" runat="server" NavigateUrl="~/USER/regist.aspx">注册</asp:HyperLink></li>
+               <li>
+                            <asp:HyperLink ID="login" runat="server" NavigateUrl="~/UserPage/Login.aspx">登录</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="register" runat="server" NavigateUrl="~/UserPage/regist.aspx">注册</asp:HyperLink></li>
+                        <li>
                <li><asp:Label ID="huanying" runat="server" Text="欢迎:" ></asp:Label></li> 
                <li><asp:LinkButton ID="zhuxiao" runat="server" >注销</asp:LinkButton></li>  
 	      </ul>
@@ -208,8 +212,8 @@
   <div class="container">
         <ol class="breadcrumb" style="background:rgba(0,0,0,0);color:#fff;margin-bottom:10px; text-align:center">
           <li><a href="index.aspx">首页</a></li>
-          <li><a href="regist.aspx">注册</a></li>
-          <li><a href="Default.aspx">登录</a></li>
+          <li><a href="Regist.aspx">注册</a></li>
+          <li><a href="Login.aspx">登录</a></li>
           <li><a href="#">个人中心</a></li>
           <li><a href="#">关于我们</a></li>
         </ol>

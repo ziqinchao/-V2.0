@@ -90,8 +90,8 @@
   <div class="container">
         <ol class="breadcrumb" style="background:rgba(0,0,0,0);color:#fff;margin-bottom:10px;">
           <li><a href="index.aspx">首页</a></li>
-          <li><a href="regist.aspx">注册</a></li>
-          <li><a href="Default.aspx">登录</a></li>
+          <li><a href="Regist.aspx">注册</a></li>
+          <li><a href="Login.aspx">登录</a></li>
           <li><a href="#">个人中心</a></li>
           <li><a href="#">关于我们</a></li>
         </ol>

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WeyiShow.Libraries;
-using WeyiShow.Yunpian;
+using Com.Alipay;
 using Newtonsoft.Json;
 using WeyiShow.MODELS;
 
@@ -20,9 +20,7 @@ namespace WeyiShow
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string ss= new Code().SingleSend();
-            YunResult yunpian = JsonConvert.DeserializeObject<YunResult>(ss);
-            TextBox2.Text = yunpian.code + yunpian.msg + yunpian.mobile;
+            Com.Alipay.Core.LogResult("11111111111111111111111");
         }
     }
 

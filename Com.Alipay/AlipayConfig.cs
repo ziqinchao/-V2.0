@@ -41,7 +41,7 @@ namespace Com.Alipay
         public static string sign_type = "MD5";
 
         // 调试用，创建TXT日志文件夹路径，见AlipayCore.cs类中的LogResult(string sWord)打印方法。
-        public static string log_path = HttpRuntime.AppDomainAppPath.ToString() + "log\\";
+        public static string log_path =  HttpRuntime.AppDomainAppPath.ToString() + "log";
 
         // 字符编码格式 目前支持utf-8
         public static string input_charset = "utf-8";

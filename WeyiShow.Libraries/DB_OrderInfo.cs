@@ -41,6 +41,29 @@ namespace WeyiShow.Libraries
         }
 
 
+        /// <summary>
+        /// 表【OrderInfo】的更新操作
+        /// 编写日期：2017/9/28
+        /// 编写人：訾钦朝
+        /// </summary>
+        /// <param name="OrderId"></param>
+        /// <param name="State"></param>
+        public int UpdateState(string OrderId, string State)
+        {
+
+            Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
+            string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
+                "UPDATE OrderInfo SET State=@State WHERE  OrderId=@OrderId " :
+                "UPDATE OrderInfo SET State=:State WHERE  OrderId=:OrderId ";
+            DbCommand cmd = db.GetSqlStringCommand(strSql);
+            db.AddInParameter(cmd, "State", DbType.String, State);
+
+            db.AddInParameter(cmd, "OrderId", DbType.String, OrderId);
+            return db.ExecuteNonQuery(cmd);
+        }
+
+
+
 
 
     }

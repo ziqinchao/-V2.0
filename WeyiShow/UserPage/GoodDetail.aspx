@@ -29,7 +29,7 @@
             </div>
             <div class="form-group clearfix">
                 <div class="pull-left">
-                    <label class=" control-label">单位：</label>
+                    <label class=" control-label">说明：</label>
                 </div>
                 <div class="pull-left">
                     <asp:Label ID="lbunit" runat="server" Text="*"></asp:Label>
