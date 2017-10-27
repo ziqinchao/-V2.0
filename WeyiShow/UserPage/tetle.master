@@ -12,6 +12,12 @@
     <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="assets/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/slide.css" />
+	<%--<link rel="stylesheet" type="text/css" href="assets/css/flat-ui.min.css" />--%>
+	<link rel="stylesheet" type="text/css" href="assets/css/jquery.nouislider.css">
+    <%--<link href="assets/css/manager.css" rel="stylesheet" type="text/css" />--%>
     <style type="text/css">
         .x-grid-row-summary .x-grid-cell-inner {
             font-weight: bold;
@@ -83,72 +89,6 @@
 	</nav>
 
 
-
-
-
-
-
-
-
-
-
-        <%-- <div id="container">
-       <div id="header">
-             <div class="top_left">
-				    <ul>
-					    <li><a href="unEdit.aspx">帮助</a></li>
-					    <li><a href="contact.aspx">联系我们</a></li>
-					    
-                        <div class="clearfix"></div>
-				    </ul>
-			    </div>
-			    <div class="top_right">
-				   <ul>                                        
-					    <li><a href="ChangePwd.aspx">会员中心</a></li>
-					    <li><a href="MyOrder.aspx">我的订单</a></li>
-                        <li><a href="AddCar.aspx">购物车</a></li>
-                        <li><asp:HyperLink ID="login" runat="server" NavigateUrl="~/USER/Default.aspx" 
-                                Font-Bold="True" Font-Size="16px" ForeColor="#FF6600">登录</asp:HyperLink></li>
-                        <li><asp:HyperLink ID="register" runat="server" 
-                                NavigateUrl="~/USER/UserRegist.aspx" Font-Bold="True" Font-Size="16px" 
-                                ForeColor="#FF6600">注册</asp:HyperLink></li>
-                        <li><asp:Label ID="huanying" runat="server" Text="欢迎:" Font-Bold="True" 
-                                Font-Size="16px" ForeColor="#FF6600"></asp:Label></li> 
-                        <li><asp:LinkButton ID="zhuxiao" runat="server"  Font-Bold="True" 
-                                Font-Size="16px" ForeColor="#FF6600" onclick="zhuxiao_Click">注销</asp:LinkButton></li>
-                        <div class="clearfix"></div>
-				    </ul>
-                    
-			    </div>
-				    <div class="clearfix"></div>
-
-       </div>
-       <div id="kong"></div>
-        <div id="top_level_1">
-              <div id="a">
-                   <img src="../images/logo.png" alt="" align="center" height="50" width="90"/>
-              </div>
-               <div id="search">
-                     <asp:TextBox ID="searchtext" runat="server" Font-Size="23px" Height="28px" 
-                         Width="300px">搜..</asp:TextBox>
-                     <asp:Button ID="submittext" runat="server" Text="搜索" BackColor="#F5F5DC" 
-                         BorderStyle="Solid" Font-Bold="True" Font-Size="20px" Height="38px" 
-                         Width="80px" onclick="submittext_Click" />
-                   </div>
-              <div class="clearfix"></div> 
-       </div>
-       <div id="nav_level_1">
-           <ul id="ul1">
-           <li><a href="index.aspx">首页</a></li>
-            <li><a href="AllProduct.aspx">全部商品</a></li>
-            <li><a href="Product_tuijain.aspx">推荐新品</a></li>
-            <li><a href="Product_remai.aspx">热卖专区</a></li>
-            <li><a href="Product_cuxiao.aspx">促销专区</a></li>
-            <li><a href="contact.aspx">客户留言</a></li>
-            <li><a href="video.aspx">产品介绍</a></li>
-            <li class="bg"></li>
-           </ul>
-       </div>--%>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
 

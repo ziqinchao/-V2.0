@@ -195,38 +195,9 @@
                                     <Items>
                                         <f:ContentPanel ID="ContentPanel2" ShowBorder="false" BodyPadding="10px" ShowHeader="false" AutoScroll="true"
                                             runat="server">
-                                            <h2>FineUI（开源版）</h2>
-                                            基于 ExtJS 的开源 ASP.NET 控件库
-                                        
-                                            <br />
-                                            <h2>FineUI的使命</h2>
-                                            创建 No JavaScript，No CSS，No UpdatePanel，No ViewState，No WebServices 的网站应用程序
-                                        
-                                            <br />
-                                            <h2>支持的浏览器</h2>
-                                            Chrome、Firefox、Safari、IE 8.0+
-                                        
-                                            <br />
-                                            <h2>授权协议</h2>
-                                            Apache License v2.0（ExtJS 库在 <a target="_blank" href="http://www.sencha.com/license">GPL v3</a> 协议下发布）
                                             
-                                            <br />
-                                            <h2>相关链接</h2>
-                                            首页：<a target="_blank" href="http://fineui.com/">http://fineui.com/</a>
-                                            <br />
-                                            论坛：<a target="_blank" href="http://fineui.com/bbs/">http://fineui.com/bbs/</a>
-                                            <br />
-                                            示例：<a target="_blank" href="http://fineui.com/demo/">http://fineui.com/demo/</a>
-                                            <br />
-                                            文档：<a target="_blank" href="http://fineui.com/doc/">http://fineui.com/doc/</a>
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <br />
-
-                                            <hr />
-                                            <br />
-                                            <a target="_blank" href="http://fineui.com/pro/">【推荐】FineUI（专业版） - 简单易用、速度飞快、皮肤多彩、经济实惠！</a>
+											
+											
 
                                         </f:ContentPanel>
                                     </Items>

@@ -1,0 +1,100 @@
+﻿*
+{
+    margin:0px;
+    padding:0px;
+    }
+body
+{
+    width:100%;
+    margin:0px auto;
+    background-color:#EDEDED;
+    }
+#header
+{
+    height:100px;
+     background-color:white;
+    }
+#header #top_left
+{
+    float:left;
+    height:100px;
+}
+#header #top_left img
+{
+    margin-top:20px;
+    margin-left:20px;
+    }
+#header #top_right
+{
+    float:right;
+}
+#header #top_right ul
+{
+    margin-right:20px;
+    margin-top:50px;
+    }
+#header #top_right ul li
+{
+    float:right;
+    list-style:none;
+    margin-right:30px;
+}
+ #nav h2
+    {
+        color:Orange;
+        text-align:center;
+        background-color:Gray;
+        line-height:40px;
+        }
+#middle
+{
+    clear:both;
+    height:650px;
+    background-color:White;
+}
+#middle #aside
+{
+    float:left;
+    width:200px;
+    height:650px;
+    background-color:gray;
+    }
+   
+    #middle #aside ul li
+    {
+        list-style:none;
+        margin-top:1px;
+        border:1px solid white;
+        width:148px;
+        height:30px;
+        padding-left:50px;
+        }
+     #middle #aside ul li a
+     {
+        text-decoration:none;
+        color:White;
+        font-family:"宋体";
+        font-size:16px;
+        line-height:30px;
+     }
+     #middle #aside ul li:hover
+     {
+         background-color:Red;
+         width:148px;
+         height:30px;
+     }
+     #middle #aside ul li a:hover
+     {
+         color:Yellow;
+     }
+#middle #aside2
+{
+    float:right;
+    width:1000px;
+    height:650px;
+    background-color:#EDEDED;
+    }
+.clearclass
+{
+    clear:both;
+}

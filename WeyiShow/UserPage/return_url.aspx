@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="return_url" Codebehind="return_url.aspx.cs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="return_url" CodeFile="return_url.aspx.cs" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,6 +8,7 @@
 </head>
 <body style="text-align: center">
     <form id="form1" runat="server">
+       
         <f:PageManager ID="PageManager1" runat="server" />
         <div style="font-size: large;">
             <f:Label ID="Label1" runat="server"></f:Label>

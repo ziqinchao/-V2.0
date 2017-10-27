@@ -66,6 +66,7 @@
     <Compile Include="DB_ReceiveInfo.cs" />
     <Compile Include="DB_ShopCar.cs" />
     <Compile Include="DB_UserInfomation.cs" />
+    <Compile Include="DB_WebService.cs" />
     <Compile Include="GetGuid.cs" />
     <Compile Include="GlobleClass.cs" />
     <Compile Include="IPCX.cs" />

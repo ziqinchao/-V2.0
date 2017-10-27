@@ -62,6 +62,19 @@ namespace WeyiShow.Libraries
             return db.ExecuteNonQuery(cmd);
         }
 
+        public DataView SelectViewOrderInfoByUserGuid(string UserGuid)
+        {
+            Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
+            string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
+                "select * from view_OrderInfo where userguid=@UserGuid " :
+                "select * from view_OrderInfo where userguid=:UserGuid";
+            DbCommand cmd = db.GetSqlStringCommand(strSql);
+
+            db.AddInParameter(cmd, "UserGuid", DbType.String, UserGuid);
+            return db.ExecuteDataView(cmd);
+        }
+
+
 
 
 

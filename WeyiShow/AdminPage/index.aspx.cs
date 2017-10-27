@@ -1,6 +1,6 @@
-﻿using System;
+﻿using FineUI;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -13,18 +13,27 @@ namespace WeyiShow.AdminPage
         string userguid = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["userphone"].ToString() != "")
+            try
             {
-                userguid = new DB_UserInfomation().SelectUserGuid(Session["userphone"].ToString());
-                if (int.Parse(new DB_UserInfomation().SelectUserRole(Session["userphone"].ToString())) == 0)
+                if (Session["userphone"].ToString() != null)
                 {
-                    Response.Redirect("../UserPage/index.aspx");
+                    userguid = new DB_UserInfomation().SelectUserGuid(Session["userphone"].ToString());
+                    if (int.Parse(new DB_UserInfomation().SelectUserRole(Session["userphone"].ToString())) == 0)
+                    {
+                        Response.Redirect("../UserPage/index.aspx");
+                    }
+                }
+                else
+                {
+                    Response.Redirect("../UserPage/Login.aspx");
                 }
             }
-            else
+            catch (Exception ex)
             {
+                Alert.ShowInTop("请先登录！");
                 Response.Redirect("../UserPage/Login.aspx");
             }
+           
             if (!Page.IsPostBack)
             {
 

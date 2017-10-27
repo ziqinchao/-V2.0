@@ -22,6 +22,7 @@ namespace WeyiShow.AdminPage
         {
             if (!IsPostBack)
             {
+                
                 // 删除选中单元格的客户端脚本
                 string deleteScript = GetDeleteScript(Grid1);
 
@@ -236,5 +237,7 @@ namespace WeyiShow.AdminPage
         {
             return new DB_UserInfomation().SelectUserName(TJRGuid.ToString());
         }
+
+        
     }
 }

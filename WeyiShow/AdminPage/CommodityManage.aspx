@@ -9,14 +9,15 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-       <%-- <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="true" Width="850px"
+        <%-- <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="true" Width="850px"
             runat="server" DataKeyNames="Id,Name" AllowCellEditing="true" ClicksToEdit="2"  
             DataIDField="Id">--%>
-            <f:Grid ID="Grid1" EnableCollapse="true" AllowCellEditing="true"  DataKeyNames="Id,Name" runat="server" Title="表格" OnPreDataBound="Grid1_PreDataBound" >
+        <f:Grid ID="Grid1" EnableCollapse="true" AllowCellEditing="true" DataKeyNames="Id,Name" runat="server" Title="表格" OnPreDataBound="Grid1_PreDataBound">
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" runat="server">
-                    <Items>
-                        <f:Button ID="btnNew" Text="新增数据" Icon="Add" EnablePostBack="false" runat="server">
+                    <Items>                        
+                        <f:Button ID="btnNew" runat="server" Icon="Add" EnablePostBack="false" OnClientClick="openUploadGoods();"
+                            Text="新增数据">
                         </f:Button>
                         <f:Button ID="btnDelete" Text="删除选中行" Icon="Delete" EnablePostBack="false" runat="server">
                         </f:Button>
@@ -34,7 +35,7 @@
                     </ItemTemplate>
                 </f:TemplateField>
                 <f:BoundField DataField="ProductId" ExpandUnusedSpace="true" DataFormatString="{0}" HeaderText="商品编号" />
-                
+
                 <f:TemplateField HeaderText="上传者姓名" ColumnID="TJRName">
                     <ItemTemplate>
                         <%# GetTJRName(Eval("TJRGuid")) %>
@@ -49,7 +50,7 @@
                 </f:RenderField>
 
                 <f:RenderField Width="100px" ColumnID="Price" DataField="Price" FieldType="String"
-                     HeaderText="价格">
+                    HeaderText="价格">
                     <Editor>
                         <f:TextBox ID="TextBox1" Required="true" runat="server">
                         </f:TextBox>
@@ -65,11 +66,11 @@
                 <f:RenderField Width="120px" ColumnID="FBData" DataField="FBData" FieldType="Date"
                     Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="上传时间">
                     <Editor>
-                        <f:DatePicker ID="DatePicker1"  runat="server">
+                        <f:DatePicker ID="DatePicker1" runat="server">
                         </f:DatePicker>
                     </Editor>
                 </f:RenderField>
-                
+
                 <f:RenderField Width="100px" ColumnID="Topceng" DataField="Topceng" FieldType="Int"
                     ExpandUnusedSpace="true" HeaderText="热度">
                     <Editor>
@@ -86,7 +87,7 @@
                     Icon="Delete" />
             </Columns>
         </f:Grid>
-       
+
 
         <br />
         <f:Button ID="Button2" runat="server" Text="保存数据" OnClick="Button2_Click">
@@ -97,13 +98,23 @@
         </f:Label>
         <br />
 
-         <f:Window ID="Window1" Title="编辑" Hidden="true" EnableIFrame="true" runat="server"
+        <f:Window ID="Window1" Title="编辑" Hidden="true" EnableIFrame="true" runat="server"
             CloseAction="HidePostBack"
-            EnableMaximize="true" EnableResize="true"  Target="Top"
+            EnableMaximize="true" EnableResize="true" Target="Top"
             IsModal="False" Width="850px" Height="450px">
         </f:Window>
 
     </form>
-    
+     <script type="text/javascript">
+
+        var basePath = '<%= ResolveUrl("~/") %>';
+
+         function openUploadGoods() {
+             parent.addExampleTab.apply(null, ['hello_fineui_tab', basePath + 'basic/UploadGoods.aspx', '上传商品', basePath + 'res/images/filetype/vs_aspx.png', undefined, true]);
+        }
+
+        
+    </script>
+
 </body>
 </html>

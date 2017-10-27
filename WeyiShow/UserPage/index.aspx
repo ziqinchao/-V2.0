@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/UserPage/indexm.master" AutoEventWireup="true" Inherits="WeyiShow.UserPage.index" Codebehind="index.aspx.cs" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/UserPage/indexm.master" AutoEventWireup="true" Inherits="WeyiShow.UserPage.index" CodeFile="index.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="row" style="margin-left: 20px; padding-top: 20px; float: left;">
@@ -20,9 +20,9 @@
                             <h5>简介：
                                 <asp:Label ID="Label3" runat="server" Text='<%#Eval("Title") %>' />
                             </h5>
-                            <h5>价格:
+                            <h4>价格：<span style="color:#f53d11">¥
                             <asp:Label ID="MarketPriceLabel" runat="server"
-                                Text='<%#Eval("Price") %>' /></h5>
+                                Text='<%#Eval("Price") %>' /></span></h4>
 
                         </div>
 
@@ -54,9 +54,9 @@
                             <h5>简介：
                                 <asp:Label ID="Label3" runat="server" Text='<%#Eval("Title") %>' />
                             </h5>
-                            <h5>价格:
+                           <h4>价格：<span style="color:#f53d11">¥
                             <asp:Label ID="MarketPriceLabel" runat="server"
-                                Text='<%#Eval("Price") %>' /></h5>
+                                Text='<%#Eval("Price") %>' /></span></h4>
 
                         </div>
 
@@ -86,10 +86,9 @@
                             <h5>简介：
                                 <asp:Label ID="Label3" runat="server" Text='<%#Eval("Title") %>' />
                             </h5>
-                            <h5>价格:
+                            <h4>价格：<span style="color:#f53d11">¥
                             <asp:Label ID="MarketPriceLabel" runat="server"
-                                Text='<%#Eval("Price") %>' /></h5>
-
+                                Text='<%#Eval("Price") %>' /></span></h4>
                         </div>
 
                     </div>

@@ -8,7 +8,7 @@ using System.Data;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
-
+using WeyiShow.Libraries;
 
 namespace FineUI.Examples
 {
@@ -18,6 +18,7 @@ namespace FineUI.Examples
 
         protected override void OnInit(EventArgs e)
         {
+            
             var pm = PageManager.Instance;
 
             // 如果不是FineUI的AJAX回发（两种情况：1.页面第一个加载 2.页面非AJAX回发）

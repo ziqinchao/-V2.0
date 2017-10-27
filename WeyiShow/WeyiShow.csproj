@@ -2938,6 +2938,9 @@
     <Content Include="extjs\res\ext-theme-triton\fonts\OpenSans-Semibold.ttf" />
     <Content Include="extjs\res\ext-theme-triton\fonts\OpenSans-SemiboldItalic.ttf" />
     <Content Include="js\jquery.min.js" />
+    <Content Include="RegionFile\Cities.xml" />
+    <Content Include="RegionFile\Districts.xml" />
+    <Content Include="RegionFile\Provinces.xml" />
     <Content Include="res\icon\accept.png" />
     <Content Include="res\icon\add.png" />
     <Content Include="res\icon\anchor.png" />
@@ -4688,20 +4691,433 @@
     <Content Include="res\loading\_93\ffffff_444444.gif" />
     <Content Include="res\loading\_99\ffffff_444444.gif" />
     <Content Include="UserPage\AddCar.aspx" />
+    <Content Include="UserPage\assets\css\common.css" />
+    <Content Include="UserPage\assets\css\flat-ui.min.css" />
+    <Content Include="UserPage\assets\css\jquery.nouislider.css" />
+    <Content Include="UserPage\assets\css\manager.css" />
+    <Content Include="UserPage\assets\css\slide.css" />
     <Content Include="UserPage\default.aspx" />
     <Content Include="UserPage\GridCart.aspx" />
+    <Content Include="UserPage\images\-0-saturn_solar.jpg_220x220.jpg" />
+    <Content Include="UserPage\images\0-item_pic.jpg_220x220.jpg" />
+    <Content Include="UserPage\images\01.jpg" />
+    <Content Include="UserPage\images\01_mid.jpg" />
+    <Content Include="UserPage\images\01_small.jpg" />
+    <Content Include="UserPage\images\02.jpg" />
+    <Content Include="UserPage\images\02_mid.jpg" />
+    <Content Include="UserPage\images\02_small.jpg" />
+    <Content Include="UserPage\images\03.jpg" />
+    <Content Include="UserPage\images\03_mid.jpg" />
+    <Content Include="UserPage\images\03_small.jpg" />
+    <Content Include="UserPage\images\1-item_pic.jpg_220x220.jpg" />
+    <Content Include="UserPage\images\1.jpg" />
+    <Content Include="UserPage\images\10.jpg" />
+    <Content Include="UserPage\images\11.jpg" />
+    <Content Include="UserPage\images\1_160x160.jpg" />
+    <Content Include="UserPage\images\2.jpg" />
+    <Content Include="UserPage\images\2016.png" />
+    <Content Include="UserPage\images\3.jpg" />
+    <Content Include="UserPage\images\3CoOkxrFOP.png" />
+    <Content Include="UserPage\images\4.jpg" />
+    <Content Include="UserPage\images\5.jpg" />
+    <Content Include="UserPage\images\556.png" />
+    <Content Include="UserPage\images\557.png" />
+    <Content Include="UserPage\images\559.png" />
+    <Content Include="UserPage\images\566.png" />
+    <Content Include="UserPage\images\566fda5cN4b8a1675.gif" />
+    <Content Include="UserPage\images\6.jpg" />
+    <Content Include="UserPage\images\62988.jpg_80x80.jpg" />
+    <Content Include="UserPage\images\65.jpg_120x120xz.jpg" />
+    <Content Include="UserPage\images\7.jpg" />
+    <Content Include="UserPage\images\72h.png" />
+    <Content Include="UserPage\images\8.jpg" />
+    <Content Include="UserPage\images\88.jpg_120x120xz.jpg" />
+    <Content Include="UserPage\images\9.jpg" />
+    <Content Include="UserPage\images\act1.png" />
+    <Content Include="UserPage\images\act2.png" />
+    <Content Include="UserPage\images\act3.png" />
+    <Content Include="UserPage\images\activity.jpg" />
+    <Content Include="UserPage\images\activity1.jpg" />
+    <Content Include="UserPage\images\activity2.jpg" />
+    <Content Include="UserPage\images\activity3.jpg" />
+    <Content Include="UserPage\images\ad1.jpg" />
+    <Content Include="UserPage\images\ad2.jpg" />
+    <Content Include="UserPage\images\ad3.jpg" />
+    <Content Include="UserPage\images\ad4.jpg" />
+    <Content Include="UserPage\images\ad5.jpg" />
+    <Content Include="UserPage\images\ad6.jpg" />
+    <Content Include="UserPage\images\ad7.jpg" />
+    <Content Include="UserPage\images\ad8.jpg" />
+    <Content Include="UserPage\images\addbg.png" />
+    <Content Include="UserPage\images\addicon.png" />
+    <Content Include="UserPage\images\addicon1.png" />
+    <Content Include="UserPage\images\addicon2.png" />
+    <Content Include="UserPage\images\advTip.jpg" />
+    <Content Include="UserPage\images\bamboo.jpg" />
+    <Content Include="UserPage\images\bamboo.png" />
+    <Content Include="UserPage\images\big.jpg" />
+    <Content Include="UserPage\images\blog01.jpg" />
+    <Content Include="UserPage\images\blog02.jpg" />
+    <Content Include="UserPage\images\blog03.jpg" />
+    <Content Include="UserPage\images\blog04.jpg" />
+    <Content Include="UserPage\images\blog05.jpg" />
+    <Content Include="UserPage\images\blog06.jpg" />
+    <Content Include="UserPage\images\blog07.jpg" />
+    <Content Include="UserPage\images\blog08.jpg" />
+    <Content Include="UserPage\images\blog09.jpg" />
+    <Content Include="UserPage\images\bonus.png" />
+    <Content Include="UserPage\images\browse1.jpg" />
+    <Content Include="UserPage\images\cake.jpg" />
+    <Content Include="UserPage\images\cake.png" />
+    <Content Include="UserPage\images\candy.jpg" />
+    <Content Include="UserPage\images\candy.png" />
+    <Content Include="UserPage\images\cardbg.jpg" />
+    <Content Include="UserPage\images\checkbox.gif" />
+    <Content Include="UserPage\images\chocolate.jpg" />
+    <Content Include="UserPage\images\chocolate.png" />
+    <Content Include="UserPage\images\chongzhi.png" />
+    <Content Include="UserPage\images\clockbg.png" />
+    <Content Include="UserPage\images\close.png" />
+    <Content Include="UserPage\images\combo.png" />
+    <Content Include="UserPage\images\comment.jpg_400x400.jpg" />
+    <Content Include="UserPage\images\comment.png" />
+    <Content Include="UserPage\images\cookies.jpg" />
+    <Content Include="UserPage\images\cookies.png" />
+    <Content Include="UserPage\images\coupon.png" />
+    <Content Include="UserPage\images\coupon2015.png" />
+    <Content Include="UserPage\images\coupon20150805.png" />
+    <Content Include="UserPage\images\couponli.png" />
+    <Content Include="UserPage\images\cp.jpg" />
+    <Content Include="UserPage\images\cp2.jpg" />
+    <Content Include="UserPage\images\day-to.png" />
+    <Content Include="UserPage\images\extra.png" />
+    <Content Include="UserPage\images\fish.jpg" />
+    <Content Include="UserPage\images\fish.png" />
+    <Content Include="UserPage\images\getAvatar.do.jpg" />
+    <Content Include="UserPage\images\gift_intro_bg.png" />
+    <Content Include="UserPage\images\gift_stamp_1.png" />
+    <Content Include="UserPage\images\gift_stamp_2.png" />
+    <Content Include="UserPage\images\gift_stamp_21.png" />
+    <Content Include="UserPage\images\gift_stamp_3.png" />
+    <Content Include="UserPage\images\gift_stamp_31.png" />
+    <Content Include="UserPage\images\header-bg.png" />
+    <Content Include="UserPage\images\header-bg1.jpg" />
+    <Content Include="UserPage\images\huismall.jpg" />
+    <Content Include="UserPage\images\hwbn40x40.jpg" />
+    <Content Include="UserPage\images\ibar_sprites.png" />
+    <Content Include="UserPage\images\icon-sale.png" />
+    <Content Include="UserPage\images\iconbig.png" />
+    <Content Include="UserPage\images\iconfont-bad.png" />
+    <Content Include="UserPage\images\iconfont-badon.png" />
+    <Content Include="UserPage\images\iconfont-evaluate.png" />
+    <Content Include="UserPage\images\iconfont-good.png" />
+    <Content Include="UserPage\images\iconfont-middle.png" />
+    <Content Include="UserPage\images\iconsmall.png" />
+    <Content Include="UserPage\images\iconsmall0.png" />
+    <Content Include="UserPage\images\iconsmall1.png" />
+    <Content Include="UserPage\images\iconsmall2.png" />
+    <Content Include="UserPage\images\iconsmall3.png" />
+    <Content Include="UserPage\images\image.jpg" />
+    <Content Include="UserPage\images\imgsearch1.jpg" />
+    <Content Include="UserPage\images\index_ico_png32.png" />
+    <Content Include="UserPage\images\item-pic.jpg" />
+    <Content Include="UserPage\images\kouhong.jpg_80x80.jpg" />
+    <Content Include="UserPage\images\kuaidi.png" />
+    <Content Include="UserPage\images\list1.jpg" />
+    <Content Include="UserPage\images\listsmall1.jpg" />
+    <Content Include="UserPage\images\loading.gif" />
+    <Content Include="UserPage\images\logo.png" />
+    <Content Include="UserPage\images\logo1.png" />
+    <Content Include="UserPage\images\logobig.png" />
+    <Content Include="UserPage\images\logobig1.png" />
+    <Content Include="UserPage\images\logobig2.png" />
+    <Content Include="UserPage\images\mansmall.jpg" />
+    <Content Include="UserPage\images\mask.png" />
+    <Content Include="UserPage\images\meat.jpg" />
+    <Content Include="UserPage\images\meat.png" />
+    <Content Include="UserPage\images\moneysmall.jpg" />
+    <Content Include="UserPage\images\mygift_bg.png" />
+    <Content Include="UserPage\images\navce.png" />
+    <Content Include="UserPage\images\navsmall.jpg" />
+    <Content Include="UserPage\images\no-img_mid_.jpg" />
+    <Content Include="UserPage\images\nut.jpg" />
+    <Content Include="UserPage\images\nut.png" />
+    <Content Include="UserPage\images\package.jpg" />
+    <Content Include="UserPage\images\package.png" />
+    <Content Include="UserPage\images\pay.png" />
+    <Content Include="UserPage\images\peraddbg.png" />
+    <Content Include="UserPage\images\peraddress.png" />
+    <Content Include="UserPage\images\peraddressbg.png" />
+    <Content Include="UserPage\images\receive.png" />
+    <Content Include="UserPage\images\refund.png" />
+    <Content Include="UserPage\images\return-process-cd.jpg" />
+    <Content Include="UserPage\images\row1.jpg" />
+    <Content Include="UserPage\images\row2.jpg" />
+    <Content Include="UserPage\images\row3.jpg" />
+    <Content Include="UserPage\images\row4.jpg" />
+    <Content Include="UserPage\images\sale-t.jpg" />
+    <Content Include="UserPage\images\sale-t_clock.jpg" />
+    <Content Include="UserPage\images\sale1.jpg" />
+    <Content Include="UserPage\images\sale2.jpg" />
+    <Content Include="UserPage\images\sale3.jpg" />
+    <Content Include="UserPage\images\scoll1.png" />
+    <Content Include="UserPage\images\scoll2.png" />
+    <Content Include="UserPage\images\send.png" />
+    <Content Include="UserPage\images\side.png" />
+    <Content Include="UserPage\images\songzi.jpg" />
+    <Content Include="UserPage\images\sprite.png" />
+    <Content Include="UserPage\images\sys_item_selected.gif" />
+    <Content Include="UserPage\images\T13iv.XiFdXXa94Hfd-32-32.png" />
+    <Content Include="UserPage\images\TB102.jpg" />
+    <Content Include="UserPage\images\TB1SSK7JpXXXXXCXXXXXXXXXXXX-800-600.png" />
+    <Content Include="UserPage\images\TB1_pic.jpg_200x200.jpg" />
+    <Content Include="UserPage\images\tea.jpg" />
+    <Content Include="UserPage\images\tea.png" />
+    <Content Include="UserPage\images\TJ.jpg" />
+    <Content Include="UserPage\images\tj.png" />
+    <Content Include="UserPage\images\tj1.png" />
+    <Content Include="UserPage\images\TJ2.jpg" />
+    <Content Include="UserPage\images\tj2.png" />
+    <Content Include="UserPage\images\tw1.jpg" />
+    <Content Include="UserPage\images\tw2.jpg" />
+    <Content Include="UserPage\images\tw3.jpg" />
+    <Content Include="UserPage\images\tw4.jpg" />
+    <Content Include="UserPage\images\tw5.jpg" />
+    <Content Include="UserPage\images\tw6.jpg" />
+    <Content Include="UserPage\images\tw7.jpg" />
+    <Content Include="UserPage\images\wallet.png" />
+    <Content Include="UserPage\images\wangyin.jpg" />
+    <Content Include="UserPage\images\wdsc.png" />
+    <Content Include="UserPage\images\weixin_code_145.png" />
+    <Content Include="UserPage\images\weizhifu.jpg" />
+    <Content Include="UserPage\images\YXARdXxj5.png" />
+    <Content Include="UserPage\images\zhifubao.jpg" />
+    <Content Include="UserPage\images\图标.png" />
     <Content Include="UserPage\notify_url.aspx" />
     <Content Include="UserPage\OrderSure.aspx" />
     <Content Include="UserPage\PersonInfo.aspx" />
+    <Content Include="UserPage\Person\address.aspx" />
+    <Content Include="UserPage\Person\css\addstyle.css" />
+    <Content Include="UserPage\Person\css\admin.css" />
+    <Content Include="UserPage\Person\css\amazeui.css" />
+    <Content Include="UserPage\Person\css\infstyle.css" />
+    <Content Include="UserPage\Person\css\orstyle.css" />
+    <Content Include="UserPage\Person\css\personal.css" />
+    <Content Include="UserPage\Person\css\systyle.css" />
+    <Content Include="UserPage\Person\fonts\fontawesome-webfont.svg" />
+    <Content Include="UserPage\Person\images\-0-saturn_solar.jpg_220x220.jpg" />
+    <Content Include="UserPage\Person\images\0-item_pic.jpg_220x220.jpg" />
+    <Content Include="UserPage\Person\images\01.jpg" />
+    <Content Include="UserPage\Person\images\01_mid.jpg" />
+    <Content Include="UserPage\Person\images\01_small.jpg" />
+    <Content Include="UserPage\Person\images\02.jpg" />
+    <Content Include="UserPage\Person\images\02_mid.jpg" />
+    <Content Include="UserPage\Person\images\02_small.jpg" />
+    <Content Include="UserPage\Person\images\03.jpg" />
+    <Content Include="UserPage\Person\images\03_mid.jpg" />
+    <Content Include="UserPage\Person\images\03_small.jpg" />
+    <Content Include="UserPage\Person\images\1-item_pic.jpg_220x220.jpg" />
+    <Content Include="UserPage\Person\images\1.jpg" />
+    <Content Include="UserPage\Person\images\10.jpg" />
+    <Content Include="UserPage\Person\images\11.jpg" />
+    <Content Include="UserPage\Person\images\1_160x160.jpg" />
+    <Content Include="UserPage\Person\images\2.jpg" />
+    <Content Include="UserPage\Person\images\2016.png" />
+    <Content Include="UserPage\Person\images\3.jpg" />
+    <Content Include="UserPage\Person\images\3CoOkxrFOP.png" />
+    <Content Include="UserPage\Person\images\4.jpg" />
+    <Content Include="UserPage\Person\images\5.jpg" />
+    <Content Include="UserPage\Person\images\556.png" />
+    <Content Include="UserPage\Person\images\557.png" />
+    <Content Include="UserPage\Person\images\559.png" />
+    <Content Include="UserPage\Person\images\566.png" />
+    <Content Include="UserPage\Person\images\566fda5cN4b8a1675.gif" />
+    <Content Include="UserPage\Person\images\6.jpg" />
+    <Content Include="UserPage\Person\images\62988.jpg_80x80.jpg" />
+    <Content Include="UserPage\Person\images\65.jpg_120x120xz.jpg" />
+    <Content Include="UserPage\Person\images\7.jpg" />
+    <Content Include="UserPage\Person\images\72h.png" />
+    <Content Include="UserPage\Person\images\8.jpg" />
+    <Content Include="UserPage\Person\images\88.jpg_120x120xz.jpg" />
+    <Content Include="UserPage\Person\images\9.jpg" />
+    <Content Include="UserPage\Person\images\act1.png" />
+    <Content Include="UserPage\Person\images\act2.png" />
+    <Content Include="UserPage\Person\images\act3.png" />
+    <Content Include="UserPage\Person\images\activity.jpg" />
+    <Content Include="UserPage\Person\images\activity1.jpg" />
+    <Content Include="UserPage\Person\images\activity2.jpg" />
+    <Content Include="UserPage\Person\images\activity3.jpg" />
+    <Content Include="UserPage\Person\images\ad1.jpg" />
+    <Content Include="UserPage\Person\images\ad2.jpg" />
+    <Content Include="UserPage\Person\images\ad3.jpg" />
+    <Content Include="UserPage\Person\images\ad4.jpg" />
+    <Content Include="UserPage\Person\images\ad5.jpg" />
+    <Content Include="UserPage\Person\images\ad6.jpg" />
+    <Content Include="UserPage\Person\images\ad7.jpg" />
+    <Content Include="UserPage\Person\images\ad8.jpg" />
+    <Content Include="UserPage\Person\images\addbg.png" />
+    <Content Include="UserPage\Person\images\addicon.png" />
+    <Content Include="UserPage\Person\images\addicon1.png" />
+    <Content Include="UserPage\Person\images\addicon2.png" />
+    <Content Include="UserPage\Person\images\advTip.jpg" />
+    <Content Include="UserPage\Person\images\bamboo.jpg" />
+    <Content Include="UserPage\Person\images\bamboo.png" />
+    <Content Include="UserPage\Person\images\big.jpg" />
+    <Content Include="UserPage\Person\images\blog01.jpg" />
+    <Content Include="UserPage\Person\images\blog02.jpg" />
+    <Content Include="UserPage\Person\images\blog03.jpg" />
+    <Content Include="UserPage\Person\images\blog04.jpg" />
+    <Content Include="UserPage\Person\images\blog05.jpg" />
+    <Content Include="UserPage\Person\images\blog06.jpg" />
+    <Content Include="UserPage\Person\images\blog07.jpg" />
+    <Content Include="UserPage\Person\images\blog08.jpg" />
+    <Content Include="UserPage\Person\images\blog09.jpg" />
+    <Content Include="UserPage\Person\images\bonus.png" />
+    <Content Include="UserPage\Person\images\browse1.jpg" />
+    <Content Include="UserPage\Person\images\cake.jpg" />
+    <Content Include="UserPage\Person\images\cake.png" />
+    <Content Include="UserPage\Person\images\candy.jpg" />
+    <Content Include="UserPage\Person\images\candy.png" />
+    <Content Include="UserPage\Person\images\cardbg.jpg" />
+    <Content Include="UserPage\Person\images\checkbox.gif" />
+    <Content Include="UserPage\Person\images\chocolate.jpg" />
+    <Content Include="UserPage\Person\images\chocolate.png" />
+    <Content Include="UserPage\Person\images\chongzhi.png" />
+    <Content Include="UserPage\Person\images\clockbg.png" />
+    <Content Include="UserPage\Person\images\close.png" />
+    <Content Include="UserPage\Person\images\combo.png" />
+    <Content Include="UserPage\Person\images\comment.jpg_400x400.jpg" />
+    <Content Include="UserPage\Person\images\comment.png" />
+    <Content Include="UserPage\Person\images\cookies.jpg" />
+    <Content Include="UserPage\Person\images\cookies.png" />
+    <Content Include="UserPage\Person\images\coupon.png" />
+    <Content Include="UserPage\Person\images\coupon2015.png" />
+    <Content Include="UserPage\Person\images\coupon20150805.png" />
+    <Content Include="UserPage\Person\images\couponli.png" />
+    <Content Include="UserPage\Person\images\cp.jpg" />
+    <Content Include="UserPage\Person\images\cp2.jpg" />
+    <Content Include="UserPage\Person\images\day-to.png" />
+    <Content Include="UserPage\Person\images\extra.png" />
+    <Content Include="UserPage\Person\images\fish.jpg" />
+    <Content Include="UserPage\Person\images\fish.png" />
+    <Content Include="UserPage\Person\images\getAvatar.jpg" />
+    <Content Include="UserPage\Person\images\gift_intro_bg.png" />
+    <Content Include="UserPage\Person\images\gift_stamp_1.png" />
+    <Content Include="UserPage\Person\images\gift_stamp_2.png" />
+    <Content Include="UserPage\Person\images\gift_stamp_21.png" />
+    <Content Include="UserPage\Person\images\gift_stamp_3.png" />
+    <Content Include="UserPage\Person\images\gift_stamp_31.png" />
+    <Content Include="UserPage\Person\images\header-bg.png" />
+    <Content Include="UserPage\Person\images\header-bg1.jpg" />
+    <Content Include="UserPage\Person\images\huismall.jpg" />
+    <Content Include="UserPage\Person\images\hwbn40x40.jpg" />
+    <Content Include="UserPage\Person\images\ibar_sprites.png" />
+    <Content Include="UserPage\Person\images\icon-sale.png" />
+    <Content Include="UserPage\Person\images\iconbig.png" />
+    <Content Include="UserPage\Person\images\iconfont-bad.png" />
+    <Content Include="UserPage\Person\images\iconfont-badon.png" />
+    <Content Include="UserPage\Person\images\iconfont-evaluate.png" />
+    <Content Include="UserPage\Person\images\iconfont-good.png" />
+    <Content Include="UserPage\Person\images\iconfont-middle.png" />
+    <Content Include="UserPage\Person\images\iconsmall.png" />
+    <Content Include="UserPage\Person\images\iconsmall0.png" />
+    <Content Include="UserPage\Person\images\iconsmall1.png" />
+    <Content Include="UserPage\Person\images\iconsmall2.png" />
+    <Content Include="UserPage\Person\images\iconsmall3.png" />
+    <Content Include="UserPage\Person\images\image.jpg" />
+    <Content Include="UserPage\Person\images\imgsearch1.jpg" />
+    <Content Include="UserPage\Person\images\index_ico_png32.png" />
+    <Content Include="UserPage\Person\images\item-pic.jpg" />
+    <Content Include="UserPage\Person\images\kouhong.jpg_80x80.jpg" />
+    <Content Include="UserPage\Person\images\kuaidi.png" />
+    <Content Include="UserPage\Person\images\list1.jpg" />
+    <Content Include="UserPage\Person\images\listsmall1.jpg" />
+    <Content Include="UserPage\Person\images\loading.gif" />
+    <Content Include="UserPage\Person\images\logo.png" />
+    <Content Include="UserPage\Person\images\logo1.png" />
+    <Content Include="UserPage\Person\images\logobig.png" />
+    <Content Include="UserPage\Person\images\logobig1.png" />
+    <Content Include="UserPage\Person\images\logobig2.png" />
+    <Content Include="UserPage\Person\images\mansmall.jpg" />
+    <Content Include="UserPage\Person\images\mask.png" />
+    <Content Include="UserPage\Person\images\meat.jpg" />
+    <Content Include="UserPage\Person\images\meat.png" />
+    <Content Include="UserPage\Person\images\moneysmall.jpg" />
+    <Content Include="UserPage\Person\images\mygift_bg.png" />
+    <Content Include="UserPage\Person\images\navce.png" />
+    <Content Include="UserPage\Person\images\navsmall.jpg" />
+    <Content Include="UserPage\Person\images\no-img_mid_.jpg" />
+    <Content Include="UserPage\Person\images\nut.jpg" />
+    <Content Include="UserPage\Person\images\nut.png" />
+    <Content Include="UserPage\Person\images\package.jpg" />
+    <Content Include="UserPage\Person\images\package.png" />
+    <Content Include="UserPage\Person\images\pay.png" />
+    <Content Include="UserPage\Person\images\peraddbg.png" />
+    <Content Include="UserPage\Person\images\peraddress.png" />
+    <Content Include="UserPage\Person\images\peraddressbg.png" />
+    <Content Include="UserPage\Person\images\receive.png" />
+    <Content Include="UserPage\Person\images\refund.png" />
+    <Content Include="UserPage\Person\images\return-process-cd.jpg" />
+    <Content Include="UserPage\Person\images\row1.jpg" />
+    <Content Include="UserPage\Person\images\row2.jpg" />
+    <Content Include="UserPage\Person\images\row3.jpg" />
+    <Content Include="UserPage\Person\images\row4.jpg" />
+    <Content Include="UserPage\Person\images\sale-t.jpg" />
+    <Content Include="UserPage\Person\images\sale-t_clock.jpg" />
+    <Content Include="UserPage\Person\images\sale1.jpg" />
+    <Content Include="UserPage\Person\images\sale2.jpg" />
+    <Content Include="UserPage\Person\images\sale3.jpg" />
+    <Content Include="UserPage\Person\images\scoll1.png" />
+    <Content Include="UserPage\Person\images\scoll2.png" />
+    <Content Include="UserPage\Person\images\send.png" />
+    <Content Include="UserPage\Person\images\side.png" />
+    <Content Include="UserPage\Person\images\songzi.jpg" />
+    <Content Include="UserPage\Person\images\sprite.png" />
+    <Content Include="UserPage\Person\images\sys_item_selected.gif" />
+    <Content Include="UserPage\Person\images\T13iv.XiFdXXa94Hfd-32-32.png" />
+    <Content Include="UserPage\Person\images\TB102.jpg" />
+    <Content Include="UserPage\Person\images\TB1SSK7JpXXXXXCXXXXXXXXXXXX-800-600.png" />
+    <Content Include="UserPage\Person\images\TB1_pic.jpg_200x200.jpg" />
+    <Content Include="UserPage\Person\images\tea.jpg" />
+    <Content Include="UserPage\Person\images\tea.png" />
+    <Content Include="UserPage\Person\images\TJ.jpg" />
+    <Content Include="UserPage\Person\images\tj.png" />
+    <Content Include="UserPage\Person\images\tj1.png" />
+    <Content Include="UserPage\Person\images\TJ2.jpg" />
+    <Content Include="UserPage\Person\images\tj2.png" />
+    <Content Include="UserPage\Person\images\tw1.jpg" />
+    <Content Include="UserPage\Person\images\tw2.jpg" />
+    <Content Include="UserPage\Person\images\tw3.jpg" />
+    <Content Include="UserPage\Person\images\tw4.jpg" />
+    <Content Include="UserPage\Person\images\tw5.jpg" />
+    <Content Include="UserPage\Person\images\tw6.jpg" />
+    <Content Include="UserPage\Person\images\tw7.jpg" />
+    <Content Include="UserPage\Person\images\wallet.png" />
+    <Content Include="UserPage\Person\images\wangyin.jpg" />
+    <Content Include="UserPage\Person\images\wdsc.png" />
+    <Content Include="UserPage\Person\images\weixin_code_145.png" />
+    <Content Include="UserPage\Person\images\weizhifu.jpg" />
+    <Content Include="UserPage\Person\images\YXARdXxj5.png" />
+    <Content Include="UserPage\Person\images\zhifubao.jpg" />
+    <Content Include="UserPage\Person\images\图标.png" />
+    <Content Include="UserPage\Person\index.aspx" />
+    <Content Include="UserPage\Person\information.aspx" />
+    <Content Include="UserPage\Person\order.aspx" />
     <Content Include="UserPage\Regist.aspx" />
-    <Content Include="UserPage\return_url.aspx" />
     <Content Include="UserPage\ValidCode.ashx" />
     <Content Include="UserPage\indexm.master" />
     <Content Include="UserPage\assets\img\backgrounds\.DS_Store" />
     <Content Include="UserPage\tetle.master" />
     <Content Include="ckeditor\.htaccess" />
+    <Content Include="UserPage\WebForm1.aspx" />
     <Content Include="WebForm1.aspx" />
     <None Include="packages.config" />
+    <Content Include="UserPage\Person\PersonFrame.Master" />
+    <Content Include="UserPage\Person\fonts\fontawesome-webfont.eot" />
+    <Content Include="UserPage\Person\fonts\fontawesome-webfont.ttf" />
+    <Content Include="UserPage\Person\fonts\fontawesome-webfont.woff" />
+    <Content Include="UserPage\Person\fonts\fontawesome-webfont.woff2" />
+    <Content Include="UserPage\Person\fonts\FontAwesome.otf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -4828,19 +5244,47 @@
       <DependentUpon>PersonInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="UserPage\Person\address.aspx.cs">
+      <DependentUpon>address.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Person\address.aspx.designer.cs">
+      <DependentUpon>address.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\Person\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Person\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\Person\information.aspx.cs">
+      <DependentUpon>information.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Person\information.aspx.designer.cs">
+      <DependentUpon>information.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\Person\order.aspx.cs">
+      <DependentUpon>order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Person\order.aspx.designer.cs">
+      <DependentUpon>order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\Person\PersonFrame.Master.cs">
+      <DependentUpon>PersonFrame.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Person\PersonFrame.Master.designer.cs">
+      <DependentUpon>PersonFrame.Master</DependentUpon>
+    </Compile>
     <Compile Include="UserPage\Regist.aspx.cs">
       <DependentUpon>Regist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserPage\Regist.aspx.designer.cs">
       <DependentUpon>Regist.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UserPage\return_url.aspx.cs">
-      <DependentUpon>return_url.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserPage\return_url.aspx.designer.cs">
-      <DependentUpon>return_url.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserPage\tetle.master.cs">
       <DependentUpon>tetle.master</DependentUpon>
@@ -4855,6 +5299,13 @@
     </Compile>
     <Compile Include="UserPage\GoodDetail.aspx.designer.cs">
       <DependentUpon>GoodDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -4878,7 +5329,9 @@
       <Name>WeyiShow.MODELS</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UserPage\Person\js\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

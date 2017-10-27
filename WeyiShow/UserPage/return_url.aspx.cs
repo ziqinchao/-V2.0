@@ -62,8 +62,8 @@ public partial class return_url : PageBase
                 string notify_time = Request.QueryString["notify_time"];
                 string subject = Request.QueryString["subject"];
 
-                if (Request.QueryString["trade_status"] == "TRADE_FINISHED" || Request.QueryString["trade_status"] == "TRADE_SUCCESS")
-                {
+                //if (Request.QueryString["trade_status"] == "TRADE_FINISHED" || Request.QueryString["trade_status"] == "TRADE_SUCCESS")
+                //{
                     int issuc= new DB_OrderInfo().UpdateState(out_trade_no, "已付款");
                     if (issuc == 1)
                     {
@@ -76,11 +76,11 @@ public partial class return_url : PageBase
                     //判断该笔订单是否在商户网站中已经做过处理
                     //如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
                     //如果有做过处理，不执行商户的业务程序
-                }
-                else
-                {
-                    Response.Write("trade_status=" + Request.QueryString["trade_status"]);
-                }
+                //}
+                //else
+                //{
+                    //Response.Write("trade_status=" + Request.QueryString["trade_status"]);
+                //}
 
                 
 

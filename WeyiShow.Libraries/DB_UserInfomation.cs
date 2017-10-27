@@ -89,6 +89,30 @@ namespace WeyiShow.Libraries
         }
 
 
+
+        /// <summary>
+        /// 根据相应条件，获取表【UserInfomation】的详细信息
+        /// 编写日期：2017/9/13
+        /// 编写人：訾钦朝
+        /// </summary>
+        /// <param name="UserPwd"></param>
+        /// <param name="UserPhone"></param>
+        public DataView SelectInfo(string UserPhone, string UserPwd)
+        {
+
+            Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
+            string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
+                "SELECT * FROM UserInfomation Where  UserPwd=@UserPwd AND UserPhone=@UserPhone " :
+                "SELECT * FROM UserInfomation Where  UserPwd=:UserPwd AND UserPhone=:UserPhone ";
+            DbCommand cmd = db.GetSqlStringCommand(strSql);
+            UserPwd = GetMD5(UserPwd);
+            db.AddInParameter(cmd, "UserPwd", DbType.String, UserPwd);
+            db.AddInParameter(cmd, "UserPhone", DbType.String, UserPhone);
+            //return db.ExecuteDataView(cmd);
+            return db.ExecuteDataView(cmd);
+        }
+
+
         /// <summary>
         /// 根据相应条件，获取表【UserInfomation】的记录
         /// 编写日期：2017/9/13
@@ -148,6 +172,63 @@ namespace WeyiShow.Libraries
             db.AddInParameter(cmd, "UserGuid", DbType.String, UserGuid);
             return db.ExecuteScalar(cmd).ToString();
         }
+
+        /// <summary>
+        /// 根据userguid获取用户个人资料
+        /// 编写日期：2017/10/27
+        /// 编写人：訾钦朝
+        /// </summary>
+        /// <param name="UserGuid"></param>
+        public DataView SelectUserInfo(string UserGuid)
+        {
+
+            Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
+            string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
+                "SELECT UserGuid,UserNickName,UserName,UserSex,UserEmail,UserPhone,UserAddress,BirthDay,ResgitData FROM UserInfomation Where  UserGuid=@UserGuid " :
+                "SELECT UserGuid,UserNickName,UserName,UserSex,UserEmail,UserPhone,UserAddress,BirthDay,ResgitData FROM UserInfomation Where  UserGuid=:UserGuid ";
+            DbCommand cmd = db.GetSqlStringCommand(strSql);
+
+            db.AddInParameter(cmd, "UserGuid", DbType.String, UserGuid);
+            return db.ExecuteDataView(cmd);
+        }
+
+
+        /// <summary>
+        /// 用户中心的表【UserInfomation】的更新操作
+        /// 编写日期：2017/10/27
+        /// 编写人：訾钦朝
+        /// </summary>
+        /// <param name="UserGuid"></param>
+        /// <param name="UserNickName"></param>
+        /// <param name="UserName"></param>
+        /// <param name="UserSex"></param>
+        /// <param name="UserEmail"></param>
+        /// <param name="UserPhone"></param>
+        public int UpdateUserInfo(string UserGuid, string UserNickName, string UserName, int UserSex, string UserEmail, string UserPhone,DateTime BirthDay)
+        {
+
+            Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
+            string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
+                "UPDATE UserInfomation SET UserGuid=@UserGuid,UserNickName=@UserNickName,UserName=@UserName,UserSex=@UserSex,UserEmail=@UserEmail,UserPhone=@UserPhone,BirthDay=@BirthDay WHERE  UserGuid=@UserGuid " :
+                "UPDATE UserInfomation SET UserGuid=:UserGuid,UserNickName=:UserNickName,UserName=:UserName,UserSex=:UserSex,UserEmail=:UserEmail,UserPhone=:UserPhone,BirthDay=:BirthDay WHERE  UserGuid=:UserGuid ";
+            DbCommand cmd = db.GetSqlStringCommand(strSql);
+            db.AddInParameter(cmd, "UserNickName", DbType.String, UserNickName);
+            db.AddInParameter(cmd, "UserName", DbType.String, UserName);
+            db.AddInParameter(cmd, "UserSex", DbType.Int32, UserSex);
+            db.AddInParameter(cmd, "UserEmail", DbType.String, UserEmail);
+            db.AddInParameter(cmd, "UserPhone", DbType.String, UserPhone);
+            db.AddInParameter(cmd, "BirthDay", DbType.String, BirthDay);
+
+            db.AddInParameter(cmd, "UserGuid", DbType.String, UserGuid);
+            return db.ExecuteNonQuery(cmd);
+        }
+
+
+
+
+
+
+
 
 
 
