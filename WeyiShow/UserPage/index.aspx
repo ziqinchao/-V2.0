@@ -32,7 +32,7 @@
         </asp:Repeater>
     </div>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="Server">
+<asp:Content ID="Content2"     ContentPlaceHolderID ="ContentPlaceHolder2" runat="Server">
 
     <div class="row" style="margin-left: 20px; padding-top: 20px; float: left;">
         <asp:Repeater ID="dlResult2" runat="server">

@@ -10,7 +10,7 @@
         <hr />
 
         <!--头像 -->
-        <div class="user-infoPic">
+        <%--<div class="user-infoPic">
 
             <div class="filePic">
                 <input type="file" class="inputPic" allowexts="gif,jpeg,jpg,png,bmp" accept="image/*">
@@ -33,7 +33,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div>--%>
 
         <!--个人信息 -->
         <div class="info-main">
@@ -58,18 +58,18 @@
                 <div class="am-form-group">
                     <label class="am-form-label">性别</label>
                     <div class="am-form-content sex">
-                        
+
                         <label class="am-radio-inline">
                             <asp:RadioButton ID="RadioButton1" GroupName="xingbie" Text="男" runat="server" data-am-ucheck />
-									
+
                         </label>
                         <label class="am-radio-inline">
                             <asp:RadioButton ID="RadioButton2" GroupName="xingbie" Text="女" runat="server" data-am-ucheck />
-									
+
                         </label>
                         <label class="am-radio-inline">
-                           <asp:RadioButton ID="RadioButton3" GroupName="xingbie" Text="保密" runat="server" data-am-ucheck />
-									
+                            <asp:RadioButton ID="RadioButton3" GroupName="xingbie" Text="保密" runat="server" data-am-ucheck />
+
                         </label>
                     </div>
                 </div>
@@ -78,12 +78,12 @@
                     <label for="user-birth" class="am-form-label">生日</label>
                     <div class="am-form-content birth">
                         <div class="birth-select">
-                            <asp:DropDownList ID="Year"  runat="server" >
+                            <asp:DropDownList ID="Year" runat="server">
                             </asp:DropDownList>
                             <em>年</em>
                         </div>
                         <div class="birth-select2">
-                            <asp:DropDownList ID="Month" runat="server" >
+                            <asp:DropDownList ID="Month" runat="server">
                             </asp:DropDownList>
                             <em>月</em>
                         </div>
@@ -105,11 +105,11 @@
                 <div class="am-form-group">
                     <label for="user-email" class="am-form-label">电子邮件</label>
                     <div class="am-form-content">
-                       <%-- <input id="user-email" placeholder="Email" type="email">--%>
+                        <%-- <input id="user-email" placeholder="Email" type="email">--%>
                         <asp:TextBox ID="useremail" runat="server"></asp:TextBox>
                     </div>
                 </div>
-               <%-- <div class="am-form-group address">
+                <%-- <div class="am-form-group address">
                     <label for="user-address" class="am-form-label">收货地址</label>
                     <div class="am-form-content address">
                         <a href="address.aspx">
@@ -139,10 +139,12 @@
                     </div>
                 </div>--%>
                 <div class="info-btn">
-                    <asp:Button ID="btnsave" class="am-btn am-btn-danger" runat="server" Text="保存修改" OnClick="btnsave_Click" />
-                    <%--<div class="am-btn am-btn-danger">保存修改</div>--%>
+                    
+                    <a class="am-btn am-btn-danger" onclick="Edit();">保存修改</a>
                 </div>
-
+                <div style="display: none">
+                    <asp:TextBox ID="userguid1" runat="server"></asp:TextBox>
+                </div>
             </form>
 
         </div>
@@ -197,6 +199,44 @@
                 }
             }
             return false;
+        }
+
+        function Edit() {
+
+            
+
+            var userguid = $('#<%=userguid1.ClientID%>').val();
+            var nickname = $('#<%=username2.ClientID%>').val();
+            var username = $('#<%=username1.ClientID%>').val();
+            var time = $('#<%=Year.ClientID%>').find("option:selected").text() +"-"+ $('#<%=Month.ClientID%>').find("option:selected").text() + "-" + $('#<%=Day.ClientID%>').find("option:selected").text();
+            var phone = $('#<%=userphone.ClientID%>').val();
+            var email = $('#<%=useremail.ClientID%>').val();
+            var sex = '';
+            if (document.getElementById("ctl00_ContentPlaceHolder1_RadioButton1").checked == true) 
+                sex = 1;
+            if (document.getElementById("ctl00_ContentPlaceHolder1_RadioButton2").checked == true) 
+                sex = 2;
+            if (document.getElementById("ctl00_ContentPlaceHolder1_RadioButton3").checked == true)
+                sex = 3;
+            $.ajax({
+                type: "POST",
+                url: "LinkageAjax.ashx?type=EditInformation" + "&userguid=" + userguid + "&nickname=" + nickname + "&username=" + username + "&time=" + time + "&phone=" + phone + "&email=" + email + "&sex=" + sex,
+                data: "",
+                beforeSend: function () { },
+                success: function (msg) {
+                    if (msg == 1) {
+                        alert("修改成功");
+                        location = location;
+                    }
+                    else {
+                        alert("修改失败");
+                        location = location;
+                    }
+
+                },
+                error: function () { alert("网络繁忙，请稍后再试。"); },
+                complete: function () { }
+            });
         }
 
     </script>

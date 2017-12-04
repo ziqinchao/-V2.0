@@ -10,10 +10,12 @@ namespace WeyiShow.UserPage.Person
 {
     public partial class information : System.Web.UI.Page
     {
-        string userguid = "0d09d316-9c01-4958-8322-9a268a78d551";
+        string userguid = "";
         DB_UserInfomation dbui = new DB_UserInfomation();
         protected void Page_Load(object sender, EventArgs e)
         {
+            userguid = new DB_UserInfomation().SelectUserGuid(Session["userphone"].ToString());
+            userguid1.Text = userguid;
             if (!IsPostBack)
             {
                 BindBirth();

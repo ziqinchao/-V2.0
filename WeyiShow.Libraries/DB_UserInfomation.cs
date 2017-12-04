@@ -165,8 +165,8 @@ namespace WeyiShow.Libraries
 
             Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
             string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
-                "SELECT UserName FROM UserInfomation Where  UserGuid=@UserGuid " :
-                "SELECT UserName FROM UserInfomation Where  UserGuid=:UserGuid ";
+                "SELECT UserNickName FROM UserInfomation Where  UserGuid=@UserGuid " :
+                "SELECT UserNickName FROM UserInfomation Where  UserGuid=:UserGuid ";
             DbCommand cmd = db.GetSqlStringCommand(strSql);
 
             db.AddInParameter(cmd, "UserGuid", DbType.String, UserGuid);
@@ -181,7 +181,6 @@ namespace WeyiShow.Libraries
         /// <param name="UserGuid"></param>
         public DataView SelectUserInfo(string UserGuid)
         {
-
             Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
             string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
                 "SELECT UserGuid,UserNickName,UserName,UserSex,UserEmail,UserPhone,UserAddress,BirthDay,ResgitData FROM UserInfomation Where  UserGuid=@UserGuid " :
@@ -222,6 +221,56 @@ namespace WeyiShow.Libraries
             db.AddInParameter(cmd, "UserGuid", DbType.String, UserGuid);
             return db.ExecuteNonQuery(cmd);
         }
+
+
+        /// <summary>
+        /// 根据userguid和userpwd判断输入的密码是否正确,  获取详细信息
+        /// 编写日期：2017/11/1
+        /// 编写人：訾钦朝
+        /// </summary>
+        /// <param name="UserGuid"></param>
+        /// <param name="UserPwd"></param>
+        public DataView SelectByGuidPwd(string UserGuid, string UserPwd)
+        {
+
+            Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
+            string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
+                "SELECT * FROM UserInfomation Where  UserGuid=@UserGuid AND UserPwd=@UserPwd " :
+                "SELECT * FROM UserInfomation Where  UserGuid=:UserGuid AND UserPwd=:UserPwd ";
+            DbCommand cmd = db.GetSqlStringCommand(strSql);
+            UserPwd = GetMD5(UserPwd);
+            db.AddInParameter(cmd, "UserGuid", DbType.String, UserGuid);
+            db.AddInParameter(cmd, "UserPwd", DbType.String, UserPwd);
+            return db.ExecuteDataView(cmd);
+        }
+
+
+
+
+        /// <summary>
+        /// 根据guid修改密码
+        /// 编写日期：2017/11/1
+        /// 编写人：訾钦朝
+        /// </summary>
+        /// <param name="UserGuid"></param>
+        /// <param name="UserPwd"></param>
+        public int UpdatePwd(string UserGuid, string UserPwd)
+        {
+
+            Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
+            string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
+                "UPDATE UserInfomation SET UserPwd=@UserPwd WHERE  UserGuid=@UserGuid " :
+                "UPDATE UserInfomation SET UserPwd=:UserPwd WHERE  UserGuid=:UserGuid ";
+            DbCommand cmd = db.GetSqlStringCommand(strSql);
+            UserPwd = GetMD5(UserPwd);
+            db.AddInParameter(cmd, "UserPwd", DbType.String, UserPwd);
+
+            db.AddInParameter(cmd, "UserGuid", DbType.String, UserGuid);
+            return db.ExecuteNonQuery(cmd);
+        }
+
+
+
 
 
 

@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -82,6 +83,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Web.Mobile" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -2937,6 +2940,7 @@
     <Content Include="extjs\res\ext-theme-triton\fonts\OpenSans-Regular.ttf" />
     <Content Include="extjs\res\ext-theme-triton\fonts\OpenSans-Semibold.ttf" />
     <Content Include="extjs\res\ext-theme-triton\fonts\OpenSans-SemiboldItalic.ttf" />
+    <Content Include="js\ajaxfileupload.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="RegionFile\Cities.xml" />
     <Content Include="RegionFile\Districts.xml" />
@@ -4772,6 +4776,8 @@
     <Content Include="UserPage\images\candy.jpg" />
     <Content Include="UserPage\images\candy.png" />
     <Content Include="UserPage\images\cardbg.jpg" />
+    <Content Include="UserPage\images\cardbgf.png" />
+    <Content Include="UserPage\images\cardbgz.png" />
     <Content Include="UserPage\images\checkbox.gif" />
     <Content Include="UserPage\images\chocolate.jpg" />
     <Content Include="UserPage\images\chocolate.png" />
@@ -4896,6 +4902,7 @@
     <Content Include="UserPage\notify_url.aspx" />
     <Content Include="UserPage\OrderSure.aspx" />
     <Content Include="UserPage\PersonInfo.aspx" />
+    <Content Include="UserPage\Person\AddProduct.aspx" />
     <Content Include="UserPage\Person\address.aspx" />
     <Content Include="UserPage\Person\css\addstyle.css" />
     <Content Include="UserPage\Person\css\admin.css" />
@@ -4903,8 +4910,10 @@
     <Content Include="UserPage\Person\css\infstyle.css" />
     <Content Include="UserPage\Person\css\orstyle.css" />
     <Content Include="UserPage\Person\css\personal.css" />
+    <Content Include="UserPage\Person\css\stepstyle.css" />
     <Content Include="UserPage\Person\css\systyle.css" />
     <Content Include="UserPage\Person\fonts\fontawesome-webfont.svg" />
+    <Content Include="UserPage\Person\idcard.aspx" />
     <Content Include="UserPage\Person\images\-0-saturn_solar.jpg_220x220.jpg" />
     <Content Include="UserPage\Person\images\0-item_pic.jpg_220x220.jpg" />
     <Content Include="UserPage\Person\images\01.jpg" />
@@ -5102,14 +5111,18 @@
     <Content Include="UserPage\Person\images\图标.png" />
     <Content Include="UserPage\Person\index.aspx" />
     <Content Include="UserPage\Person\information.aspx" />
+    <Content Include="UserPage\Person\js\jqueryExtends.js" />
     <Content Include="UserPage\Person\order.aspx" />
+    <Content Include="UserPage\Person\password.aspx" />
+    <Content Include="UserPage\Person\safety.aspx" />
+    <Content Include="UserPage\Person\upload.aspx" />
+    <Content Include="UserPage\Person\WebForm1.aspx" />
     <Content Include="UserPage\Regist.aspx" />
     <Content Include="UserPage\ValidCode.ashx" />
     <Content Include="UserPage\indexm.master" />
     <Content Include="UserPage\assets\img\backgrounds\.DS_Store" />
     <Content Include="UserPage\tetle.master" />
     <Content Include="ckeditor\.htaccess" />
-    <Content Include="UserPage\WebForm1.aspx" />
     <Content Include="WebForm1.aspx" />
     <None Include="packages.config" />
     <Content Include="UserPage\Person\PersonFrame.Master" />
@@ -5118,6 +5131,9 @@
     <Content Include="UserPage\Person\fonts\fontawesome-webfont.woff" />
     <Content Include="UserPage\Person\fonts\fontawesome-webfont.woff2" />
     <Content Include="UserPage\Person\fonts\FontAwesome.otf" />
+    <Content Include="UserPage\Person\LinkageAjax.ashx" />
+    <Content Include="UserPage\Person\UploadFile.ashx" />
+    <Content Include="UserPage\Person\FileUploadHandler.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5244,12 +5260,29 @@
       <DependentUpon>PersonInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="UserPage\Person\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Person\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserPage\Person\address.aspx.cs">
       <DependentUpon>address.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserPage\Person\address.aspx.designer.cs">
       <DependentUpon>address.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\Person\FileUploadHandler.ashx.cs">
+      <DependentUpon>FileUploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\Person\idcard.aspx.cs">
+      <DependentUpon>idcard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Person\idcard.aspx.designer.cs">
+      <DependentUpon>idcard.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserPage\Person\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -5265,6 +5298,9 @@
     <Compile Include="UserPage\Person\information.aspx.designer.cs">
       <DependentUpon>information.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserPage\Person\LinkageAjax.ashx.cs">
+      <DependentUpon>LinkageAjax.ashx</DependentUpon>
+    </Compile>
     <Compile Include="UserPage\Person\order.aspx.cs">
       <DependentUpon>order.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -5272,12 +5308,43 @@
     <Compile Include="UserPage\Person\order.aspx.designer.cs">
       <DependentUpon>order.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserPage\Person\password.aspx.cs">
+      <DependentUpon>password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Person\password.aspx.designer.cs">
+      <DependentUpon>password.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserPage\Person\PersonFrame.Master.cs">
       <DependentUpon>PersonFrame.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserPage\Person\PersonFrame.Master.designer.cs">
       <DependentUpon>PersonFrame.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\Person\safety.aspx.cs">
+      <DependentUpon>safety.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Person\safety.aspx.designer.cs">
+      <DependentUpon>safety.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\Person\upload.aspx.cs">
+      <DependentUpon>upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Person\upload.aspx.designer.cs">
+      <DependentUpon>upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\Person\UploadFile.ashx.cs">
+      <DependentUpon>UploadFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\Person\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage\Person\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserPage\Regist.aspx.cs">
       <DependentUpon>Regist.aspx</DependentUpon>
@@ -5300,13 +5367,6 @@
     <Compile Include="UserPage\GoodDetail.aspx.designer.cs">
       <DependentUpon>GoodDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserPage\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserPage\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -5316,6 +5376,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\AspNet分页控件\AspNetPagerCN-7.5.1\AspNetPager\AspNetPager.csproj">
+      <Project>{0fac7937-3cdd-41f6-9dc8-c743c9f727f1}</Project>
+      <Name>AspNetPager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Com.Alipay\Com.Alipay.csproj">
       <Project>{d63bc29c-e063-4b54-9669-0b2ae3b2dcc9}</Project>
       <Name>Com.Alipay</Name>
@@ -5328,9 +5392,6 @@
       <Project>{46f72624-6390-44a6-8b31-f82c95c5d40c}</Project>
       <Name>WeyiShow.MODELS</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UserPage\Person\js\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

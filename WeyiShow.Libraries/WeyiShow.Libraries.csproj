@@ -60,11 +60,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB_Area.cs" />
     <Compile Include="DB_OrderInfo.cs" />
     <Compile Include="DB_OrderItem.cs" />
     <Compile Include="DB_ProductGood.cs" />
     <Compile Include="DB_ReceiveInfo.cs" />
     <Compile Include="DB_ShopCar.cs" />
+    <Compile Include="DB_UserContact.cs" />
     <Compile Include="DB_UserInfomation.cs" />
     <Compile Include="DB_WebService.cs" />
     <Compile Include="GetGuid.cs" />

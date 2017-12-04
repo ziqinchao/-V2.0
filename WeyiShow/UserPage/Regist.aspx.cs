@@ -10,7 +10,7 @@ using WeyiShow.Libraries;
 
 namespace WeyiShow.UserPage
 {
-    public partial class Regist : System.Web.UI.Page
+    public partial class Regist : System.Web.UI.Page      
     {
         YunpianCode co = new YunpianCode();
         DB_UserInfomation userinfo = new DB_UserInfomation();

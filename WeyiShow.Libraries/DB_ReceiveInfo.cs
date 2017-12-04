@@ -333,6 +333,27 @@ namespace WeyiShow.Libraries
         }
 
 
+        /// <summary>
+        /// 表【ReceiveInfo】的删除方法
+        /// 编写日期：2017/10/30
+        /// 编写人：訾钦朝
+        /// </summary>
+        /// <param name="RowGuid"></param>
+        public int Delete(string RowGuid)
+        {
+
+            Database db = DatabaseFactory.CreateDatabase(this.ConnectionStringName);
+            string strSql = (db.DbProviderFactory.ToString() != "System.Data.OracleClient.OracleClientFactory") ?
+                "DELETE FROM ReceiveInfo WHERE  RowGuid=@RowGuid " :
+                "DELETE FROM ReceiveInfo WHERE  RowGuid=:RowGuid ";
+            DbCommand cmd = db.GetSqlStringCommand(strSql);
+
+            db.AddInParameter(cmd, "RowGuid", DbType.String, RowGuid);
+            return db.ExecuteNonQuery(cmd);
+        }
+
+
+
 
 
 

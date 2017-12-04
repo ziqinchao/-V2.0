@@ -8,7 +8,6 @@
 </head>
 <body style="text-align: center">
     <form id="form1" runat="server">
-       
         <f:PageManager ID="PageManager1" runat="server" />
         <div style="font-size: large;">
             <f:Label ID="Label1" runat="server"></f:Label>
